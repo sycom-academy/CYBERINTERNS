@@ -1,0 +1,27 @@
+# CODEOWNERS — who must approve a change to each area.
+#
+# Enforced only when the `main` ruleset has "Require review from Code Owners"
+# switched on (see .github/rulesets/main-protection.json).
+#
+# DESIGN NOTE: intern teams are deliberately NOT listed as owners anywhere.
+# A code owner can satisfy the code-owner review requirement, so listing
+# @interns-grc as owner of /03-GRC/ would let one GRC intern approve the
+# other's work and merge it unreviewed. Every merge to main needs a mentor.
+# Peer review is encouraged as a second reviewer, not as the gate.
+
+# Default — anything not matched below.
+*                       @sycom-academy/mentors
+
+# Programme administration and repo configuration.
+/00-ADMIN/              @sycom-academy/mentors
+/.github/               @sycom-academy/mentors
+/README.md              @sycom-academy/mentors
+
+# Scenario source material. Mentors author; interns read.
+/01-CLIENT/             @sycom-academy/mentors
+/02-ARCHITECTURE/       @sycom-academy/mentors
+/05-INJECTS/            @sycom-academy/mentors
+
+# Assessment records and certificates. CISO only — not general mentors.
+/07-FINAL/Assessment/   @sycom-academy/ciso
+/07-FINAL/Certificates/ @sycom-academy/ciso

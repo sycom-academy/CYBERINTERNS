@@ -1,0 +1,42 @@
+{
+  "name": "protected-paths",
+  "target": "push",
+  "source_type": "Repository",
+  "enforcement": "active",
+  "conditions": {},
+  "rules": [
+    {
+      "type": "file_path_restriction",
+      "parameters": {
+        "restricted_file_paths": [
+          "00-ADMIN/**",
+          "07-FINAL/Assessment/**",
+          "07-FINAL/Certificates/**",
+          ".github/**"
+        ]
+      }
+    },
+    {
+      "type": "max_file_size",
+      "parameters": {
+        "max_file_size": 50
+      }
+    },
+    {
+      "type": "file_extension_restriction",
+      "parameters": {
+        "restricted_file_extensions": [
+          ".pem", ".key", ".p12", ".pfx", ".keytab", ".ovpn", ".kdbx"
+        ]
+      }
+    }
+  ],
+  "bypass_actors": [
+    {
+      "actor_id": 0,
+      "actor_type": "Team",
+      "bypass_mode": "always",
+      "_comment": "REPLACE actor_id 0 with the numeric id of @sycom-academy/mentors before import. Get it with: GET /orgs/sycom-academy/teams/mentors -> .id"
+    }
+  ]
+}

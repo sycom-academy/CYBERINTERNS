@@ -104,14 +104,67 @@ one GRC intern could approve the other's deliverable and satisfy the review
 requirement without a mentor ever reading it. Peer review is valuable — add a
 peer as a second reviewer, not as the gate.
 
+## Secret scanning
+
+GitHub's native secret scanning and push protection are **not available** on
+this repository. They are free on public repos only; on a private repo they
+require GitHub Advanced Security / Secret Protection, a paid per-committer
+add-on. Going private was the right call, but it cost us that control.
+
+The replacement is gitleaks, run in CI by `.github/workflows/secret-scan.yml`
+on every pull request into `main` and on every push to `main`.
+
+Three scans run per job, any one of which fails the check:
+
+1. **Working tree** — every file as it stands.
+2. **Unpacked Office documents** — `.docx`, `.xlsx`, `.pptx`, `.odt`, `.ods`,
+   `.odp` are zip archives of XML. gitleaks reads text, so a credential pasted
+   into a Word evidence pack is invisible to a normal scan. The job unzips them
+   first and scans the extracted XML. This was verified against a test `.docx`:
+   missed before unpacking, caught after.
+3. **Git history** — `--log-opts=--all`, so a secret added and then deleted in
+   a later commit is still caught.
+
+All scans run with `--redact`, so the secret itself never appears in CI logs.
+Reports upload as a build artifact with 30-day retention.
+
+### How this differs from the real thing
+
+gitleaks fires **after** the push to a working branch, not before it. GitHub's
+push protection rejects the push itself. So a credential caught here already
+exists in that branch's history and **must still be rotated** — the check only
+guarantees it never reaches `main`. Tell interns this explicitly; "CI caught
+it" is not the same as "no harm done".
+
+### Deliberately fake credentials in injects
+
+A SOC inject may need a realistic-looking key in it — triaging a leaked
+credential is a legitimate exercise. Mark the line `SIM-FAKE` and
+`.gitleaks.toml` will allow it. This is a mentor tool. An intern adding
+`SIM-FAKE` to silence a finding on their own deliverable is itself a finding.
+
+### Making it a required check
+
+Once the workflow has run at least once, add `gitleaks` to the required status
+checks in the `main` ruleset (Settings -> Rules -> main-protection -> Require
+status checks to pass). Until then it reports but does not block.
+
+### Maintenance
+
+`GITLEAKS_VERSION` is pinned in the workflow. Bump it deliberately; a floating
+version means CI changes underneath you mid-pilot. The workflow installs the
+gitleaks binary from its GitHub release rather than using `gitleaks-action`,
+which requires a paid licence for organisation-owned repositories — which is
+where this repo is heading.
+
 ## What this does not solve
 
-- **Secrets pasted inside documents.** Push rulesets match filenames, and
-  secret scanning does not read the inside of a `.docx` or a screenshot. The
-  control here is the PR template checklist and the mentor actually looking.
-- **Repository visibility.** None of the above matters if the repo is public.
-  Confirm private before interns are added, and re-enable secret scanning and
-  push protection afterwards — the free public-repo defaults do not carry over.
+- **Secrets inside images.** The Office unpacking above handles `.docx` and
+  `.xlsx`, but a credential visible in a screenshot is just pixels. No scanner
+  in this setup reads it. The control is the PR template checklist and the
+  mentor actually looking at the image.
+- **Repository visibility.** Confirmed private as of 2026-09-17. This removed
+  native secret scanning; see the gitleaks section above for what replaced it.
 - **Offboarding.** Removing an intern from the team removes access going
   forward. Anything they cloned is already gone. Decide now whether that is
   acceptable for the FinServe material.

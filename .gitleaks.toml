@@ -1,0 +1,40 @@
+# gitleaks configuration for SYCOM-CYBER-INTERNSHIP
+#
+# Runs in CI via .github/workflows/secret-scan.yml. GitHub's own secret
+# scanning is not available here — it requires GitHub Advanced Security,
+# which this private repository is not entitled to.
+
+title = "SYCOM-CYBER-INTERNSHIP"
+
+[extend]
+# Inherit gitleaks' full built-in ruleset (AWS, Azure, GCP, GitHub, Slack,
+# Stripe, private keys, JWTs, and ~150 others). Do not replace this with a
+# hand-written list — the built-ins are maintained; ours would not be.
+useDefault = true
+
+[allowlist]
+description = "Deliberately-fake material and config files that describe secrets without containing any"
+
+# These files talk ABOUT credential formats. They hold none.
+paths = [
+  '''\.gitleaks\.toml$''',
+  '''\.gitignore$''',
+  '''\.github/workflows/secret-scan\.yml$''',
+  '''\.github/rulesets/.*\.json$''',
+  '''00-ADMIN/REPO-GOVERNANCE\.md$''',
+]
+
+# ESCAPE HATCH FOR SCENARIO DESIGN.
+#
+# A SOC inject may legitimately need to contain a realistic-looking credential
+# — that is the whole point of "here is a leaked key in a paste site, triage
+# it". Mark the line with SIM-FAKE and gitleaks will let it through:
+#
+#     aws_secret_access_key = "wJalr...EXAMPLEKEY"   # SIM-FAKE inject-07
+#
+# Mentors only. If an intern adds SIM-FAKE to silence a finding on their own
+# work, that is a finding in itself — review the marker, not just the diff.
+regexTarget = "line"
+regexes = [
+  '''SIM-FAKE''',
+]

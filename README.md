@@ -4,6 +4,12 @@ Content repository for Sycom Academy GRC/SOC intern work simulation (Project Sen
 
 Pilot scope: 4 interns (2 GRC, 2 SOC), Scenario 1, 4 weeks, week-4 board session.
 
+## Starting out
+
+Interns: read [`00-ADMIN/INTERN-ONBOARDING.md`](00-ADMIN/INTERN-ONBOARDING.md)
+before doing anything else, then
+[`00-ADMIN/ASSESSMENT-RUBRIC.md`](00-ADMIN/ASSESSMENT-RUBRIC.md).
+
 ## Structure
 
 - `00-ADMIN` — mentor guide, assessment framework, weekly schedule, marking scheme

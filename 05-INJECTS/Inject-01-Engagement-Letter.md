@@ -85,6 +85,10 @@ You have the architecture in `02-ARCHITECTURE/` and the client profile in
 `grc/<initials>/engagement-plan` or `soc/<initials>/engagement-plan` —
 agree between you who opens it, and add the other pair as reviewers.
 
+If you have not set up your fork and git identity yet, do that first:
+[`00-ADMIN/INTERN-ONBOARDING.md`](../00-ADMIN/INTERN-ONBOARDING.md). The
+identity step cannot be undone after your first push.
+
 ## Time budget
 
 Half a day, both teams together. This is the only inject where you are expected

@@ -173,7 +173,7 @@ advice rather than assuming this policy transfers.
    private repository's README and still undecided.
 4. **A named contact** for rights requests, to appear on the form.
 5. **Mode C and the joint board pack.** Inject 09 makes the board pack a single
-   joint deliverable across all four interns, and `07-FINAL/Board-Pack/` is
+   joint deliverable across the whole cohort, and `07-FINAL/Board-Pack/` is
    public. A mode C intern cannot commit to it without appearing in its history.
    The workable answer is that a mentor commits the joint pack on the team's
    behalf, so the document is published with no per-author attribution — which

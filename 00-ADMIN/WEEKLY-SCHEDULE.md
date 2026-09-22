@@ -1,6 +1,9 @@
 # Weekly Schedule
 
-Owner: CISO. Four weeks, four interns (2 GRC, 2 SOC), Scenario 1.
+Owner: CISO. Four weeks, Scenario 1.
+
+Cohort size and mentor allocation: [`COHORT.md`](COHORT.md). Adding or removing
+people: [`JOINING.md`](JOINING.md).
 
 ---
 
@@ -31,9 +34,9 @@ Two options. **Monday 12 October is recommended.**
 | Board session | Thu 29 Oct, 14:00 | **Thu 05 Nov, 14:00** |
 
 Option A is the nearest Monday to "two weeks". It leaves the consent chain —
-data protection sign-off, forms issued, four interns replying, accounts and
-access set up — with effectively **no slack**, and that chain has four people in
-it working in series. If sign-off takes a week, forms reach interns after the
+data protection sign-off, forms issued, every intern replying, accounts and
+access set up — with effectively **no slack**, and that chain runs through the
+whole cohort in series. It gets longer as the cohort gets larger. If sign-off takes a week, forms reach interns after the
 pilot has begun, and nobody may push anything until their form is recorded.
 
 Option B costs a week and buys the whole chain a week of float. Take it unless
@@ -50,7 +53,7 @@ The critical path is consent. Everything else can be done in an afternoon.
 |---|---|---|---|
 | Consent policy signed off by the data protection contact | Programme lead | Everything below | **Immediately — this is the long pole** |
 | Lawful basis and retention for assessment records decided | Data protection contact | Recording the first mark (~W1 D5 + 5 days) | Before W1 D5 |
-| Consent forms issued to all four interns | Programme lead | Any intern pushing anything | Within 2 days of sign-off |
+| Consent forms issued to every intern | Programme lead | Any intern pushing anything | Within 2 days of sign-off |
 | Forms returned and filed in the private repo | Interns | Repository access | 5 days before W1 D1 |
 | Pseudonymous accounts created and handed over (Mode B) | Programme lead | First commit | 3 days before |
 | Interns work through `INTERN-ONBOARDING.md`, fork, set git identity | Interns | First commit | 2 days before |
@@ -175,8 +178,15 @@ weakest claim each team actually made. Method and seed bank are in
 | Week 4 | 6h |
 | Moderation and close | 3h |
 
-**Roughly 35h.** Estimated from the materials; this is the first run and nothing
-has been timed. Record what it actually takes.
+**Roughly 35h for one mentor running it alone.** With three mentors that
+divides, but not evenly and not to a third each — the natural split is one
+mentor per track plus a moderator who marks neither, which loads the two track
+mentors more heavily than the moderator during weeks 1 to 3 and reverses it in
+week 4.
+
+Agree the split before week 1 and write it down. Estimated from the materials;
+this is the first run and nothing has been timed. Record what it actually
+takes.
 
 ## 10. What slips gracefully, and what does not
 
@@ -198,7 +208,7 @@ carry on. Marking, within reason. The `protected-paths` ruleset import.
 | Situation | Do |
 |---|---|
 | An intern drops out | Continue. The tracks are paired but a single intern can carry one; reduce scope, do not reduce standards |
-| The mentor is ill in week 3 | This is the single-point-of-failure the role brief warns about. Slip the whole schedule a week rather than run week 3 unsupervised |
+| A mentor is ill in week 3 | No longer fatal — three mentors means cover exists. Hand over the track, and record the handover so marking allocation stays traceable. Only slip the schedule if two are out at once |
 | A team is badly behind by week 3 | Let them arrive at the board underprepared. That is a real outcome and it is assessable. Do not do their work |
 | Nobody connects inject 07 | Let it happen. Raise it in the debrief |
 | An intern finds something genuinely serious | Inject 01 told them to escalate rather than save it. Respond in role, and mark it under D3 |

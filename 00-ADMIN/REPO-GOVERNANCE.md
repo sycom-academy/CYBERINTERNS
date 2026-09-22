@@ -7,22 +7,31 @@ Draft. Owner: CISO. Applies from pilot week 1.
 **GitHub cannot grant write access to a subdirectory.** Repository permissions
 are whole-repo: anyone with `write` can modify every file in the tree. There is
 no setting anywhere that makes `@interns-grc` able to write `03-GRC/` but not
-`07-FINAL/Assessment/`.
+`07-FINAL/`.
 
-So "each team writes only its own area" has to be built from three different
-mechanisms, none of which is a permission:
+This document originally built "each team writes only its own area" out of
+rulesets and review, because interns were to hold Write. **They no longer hold
+any write access at all.** They fork the repository and open pull requests from
+the fork, so the subdirectory problem does not arise — the question of which
+directories an intern may write is moot when the answer is none of them.
 
 | Intent | Mechanism | Strength |
 |---|---|---|
-| Interns cannot change `main` directly | Branch ruleset — PR required, 1 approval, no bypass | Hard block |
-| A mentor sees every change before it lands | `CODEOWNERS` + "require code owner review" | Hard block |
-| Assessment records are untouchable by interns | Push ruleset — restricted file paths, mentors bypass | Hard block |
+| Interns cannot merge anything | **No write access.** They work from a fork | Structural — no configuration to get wrong |
+| Nothing reaches `main` unreviewed | Branch ruleset — PR required, no bypass | Hard block |
+| A mentor sees every change before it lands | `CODEOWNERS` + require code owner review | Hard block |
+| Assessment records are untouchable by interns | They are in a different repository interns cannot see | Structural |
 | Interns stay in their own directories day to day | Convention + PR review | Social, not enforced |
 
-The fourth row is the honest one. A GRC intern *can* open a PR touching
-`04-SOC/`. They just can't merge it, because a mentor has to approve and will
-see it. Accept that, or split into separate repositories per team — which costs
-you the single board pack and the cross-team visibility the scenario depends on.
+The last row is still the honest one, for a different reason. A GRC intern can
+open a pull request touching `04-SOC/` — anyone can propose anything from a
+fork. They cannot merge it, and a mentor reviewing will see it.
+
+What changed is the first row. It used to depend on an approval count being
+configured correctly, which meant it depended on a second mentor existing. It
+now depends on nothing: a fork has no write access to its upstream, whatever
+any ruleset says. See [`PROGRAMME-ARCHITECTURE.md`](PROGRAMME-ARCHITECTURE.md)
+§4.1.
 
 ## Two repositories, not one
 
@@ -84,8 +93,8 @@ sufficient — there is nothing to pay.
 |---|---|---|---|
 | `@sycom-academy/ciso` | CISO | Admin | Owns assessment, certificates, settings |
 | `@sycom-academy/mentors` | CISO + mentors | Maintain | Reviews and merges all intern work; cannot change repo settings |
-| `@sycom-academy/interns-grc` | 2 GRC interns | Write | Opens PRs; cannot merge |
-| `@sycom-academy/interns-soc` | 2 SOC interns | Write | Opens PRs; cannot merge |
+| `@sycom-academy/interns-grc` | GRC interns | **None** | Fork and open PRs; cannot merge because they cannot write |
+| `@sycom-academy/interns-soc` | SOC interns | **None** | Fork and open PRs; cannot merge because they cannot write |
 | `@sycom-academy/observers` | Stakeholders, board-sim participants | Read | Week-4 audience |
 
 Mentors get **Maintain**, not Admin, on purpose: it lets them merge and manage

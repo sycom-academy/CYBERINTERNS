@@ -26,7 +26,8 @@ support.
 
 ### Not assessed
 
-- **Finding everything.** Nobody is expected to. Four weeks, four people.
+- **Finding everything.** Nobody is expected to, and the scenario contains more
+  than any cohort will find in four weeks.
 - **Prior knowledge of UK financial services regulation.** You are expected to
   look things up and cite them accurately. You are not expected to arrive
   knowing SS2/21.
@@ -217,8 +218,9 @@ pressure. Whether gaps are filled with evidence or with plausibility.
 Deliverables are team products. Marks are not.
 
 **Team mark** — each criterion is marked once per track against the submitted
-deliverables. Criteria C2, C3, D2 and D3 are marked once for all four interns,
-since the board pack and the cross-track work are joint.
+deliverables. Criteria C2, C3, D2 and D3 are marked once for the whole cohort,
+since the board pack and the cross-track work are joint. Where a cohort has been
+split into two groups running in parallel, they are marked once per group.
 
 **Individual adjustment** — up to ±0.5 bands, from evidence, applied by the
 moderator.
@@ -281,10 +283,36 @@ moderation comment enters this repository at any point.**
 **Moderation.** Two marks are awarded: independent moderation, or, where there
 is only one marker, the single-marker protocol below.
 
-*Two or more mentors.* All final marks are moderated by a mentor who did not do
-the original marking, and signed off by the CISO. Moderation checks consistency
-between the two tracks — the two A-criteria sets are different instruments and
-must be calibrated against each other, not just internally.
+*Two or more mentors.* **This is the route in use.** The `mentors` team has
+three members, so marks are moderated by a mentor who did not do the original
+marking, and signed off by the CISO. Marks are **not** provisional.
+
+Three markers solves the single-marker problem and creates a different one. One
+marker drifts across a cohort; three markers **disagree with each other**, and
+an intern marked by a harsher mentor is disadvantaged by an accident of
+allocation rather than by their work. That is a fairness problem the
+single-marker protocol was not designed to catch, and moderation after the fact
+is the wrong place to find it.
+
+**Calibrate before marking, not after:**
+
+1. **Agree the allocation in advance** and record it. The natural split is one
+   mentor per track plus a moderator who marks neither — it keeps the two
+   A-criteria instruments in separate hands and leaves someone genuinely
+   independent.
+2. **Mark one deliverable together.** Before any marking counts, all three mark
+   the same submission independently, then compare band by band and talk through
+   every difference. Disagreement here is cheap; disagreement discovered at
+   moderation is expensive and arrives too late to be fair to anyone.
+3. **A criterion each, across all interns.** Whoever marks a criterion marks it
+   for every intern in that track. Nobody marks a person's whole set.
+4. **Moderation checks between markers as well as within.** If one marker's
+   bands run consistently above or below another's, that is the finding —
+   adjust the marks, and record that you did and why.
+
+Moderation still checks consistency between the two tracks: the GRC and SOC
+A-criteria are different instruments and must be calibrated against each other,
+not only internally.
 
 *One mentor.* Independent moderation is impossible and nothing substitutes for
 it. What follows reduces the two errors a single marker is most prone to —
@@ -332,13 +360,18 @@ the marker should be able to have on the spot.
 
 Recorded honestly rather than assumed:
 
-1. **Independent moderation requires a second marker.** The `mentors` team has
-   one member. §7 now carries a single-marker protocol so the framework is
-   operable, and marks awarded under it are **provisional** until either a
-   second mentor moderates them or the CISO signs them off against the
-   rationales. Certificates are not issued against provisional marks. An
-   external moderator satisfies this without needing repository access, and is
-   the cheaper route if a second mentor is not close.
+1. ~~**Independent moderation requires a second marker.**~~ **Resolved.** The
+   `mentors` team has three members, independent moderation is available, and
+   marks are not provisional. The single-marker protocol in §7 is retained for
+   the case where only one mentor is available — illness, or a future cohort —
+   and is not the route in use.
+
+   It is replaced by a live risk: **marker variance.** Three markers can
+   disagree with each other, and an intern marked by a harsher mentor is
+   disadvantaged by allocation rather than by their work. §7 now requires
+   calibration before marking rather than moderation after it. This has never
+   been run and the calibration exercise is the first thing to review after the
+   pilot.
 2. **Lawful basis and retention for assessment records** must be decided before
    the first mark is recorded. Flagged in the private repository's README.
 3. **Inject 10 questions** are written from the submitted board pack on W4 D3

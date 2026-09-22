@@ -1,0 +1,61 @@
+name: codeowners
+
+# CODEOWNERS fails OPEN, which is the dangerous direction.
+#
+# If a team named in CODEOWNERS does not exist, is not visible, or lacks write
+# access to this repository, GitHub does not reject the file and does not block
+# the merge. It treats the path as having no owner, so "Require review from Code
+# Owners" silently enforces nothing and any single approval — including one
+# intern approving another's deliverable — satisfies the gate.
+#
+# That is exactly the hole the DESIGN NOTE in .github/CODEOWNERS claims to
+# close, and nothing in the repo would have told us it was open. This job asks
+# GitHub's own validator and fails the check if it reports anything.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeowners-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: codeowners
+    runs-on: ubuntu-latest
+    steps:
+      # Validate the ref under review, not the default branch. Without ?ref=
+      # the endpoint always reports on main, so a PR that breaks CODEOWNERS
+      # would pass its own check and only fail after it had merged.
+      - name: Ask GitHub to validate CODEOWNERS
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REF: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          body=$(curl -sSf \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/codeowners/errors?ref=${REF}")
+
+          count=$(printf '%s' "$body" | jq '.errors | length')
+          if [ "$count" -eq 0 ]; then
+            echo "CODEOWNERS resolves cleanly at ${REF}."
+            exit 0
+          fi
+
+          echo "::error::CODEOWNERS has ${count} unresolved owner(s); the code-owner review gate is not enforcing."
+          printf '%s' "$body" | jq -r '
+            .errors[]
+            | "::error file=\(.path),line=\(.line),col=\(.column)::\(.kind): \(.source | rtrimstr("\n"))"
+          '
+          exit 1

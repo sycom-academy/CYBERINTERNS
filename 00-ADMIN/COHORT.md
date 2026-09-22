@@ -1,0 +1,94 @@
+# Current Cohort
+
+**This is the only file that changes between runs.** Everything else in the
+repository is written against "the cohort", "each track" and "the mentors"
+rather than against numbers, so a new intake is an edit here and nowhere else.
+
+If you find a hardcoded headcount anywhere else, it is a defect — fix it and
+point it at this file.
+
+---
+
+## This run
+
+| | |
+|---|---|
+| Cohort | Pilot 1 |
+| Scenario | Scenario 1 — FinServe Digital Bank Ltd |
+| Length | 4 weeks |
+| Week 1, Day 1 | *to be fixed — see [`WEEKLY-SCHEDULE.md`](WEEKLY-SCHEDULE.md) §2* |
+| Board session | W4 D4, 14:00 |
+
+### Tracks
+
+| Track | Interns | Team |
+|---|---|---|
+| GRC | 2 | `@sycom-academy/interns-grc` |
+| SOC | 2 | `@sycom-academy/interns-soc` |
+| **Total** | **4** | |
+
+### Mentors
+
+| Role | Count | Notes |
+|---|---|---|
+| Track mentor — GRC | 1 | Marks GRC A-criteria |
+| Track mentor — SOC | 1 | Marks SOC A-criteria |
+| Moderator | 1 | Marks neither track; moderates both |
+| **Total** | **3** | `@sycom-academy/mentors` |
+
+Record the actual allocation before week 1 — who marks which criteria — and
+keep it here. Rubric §7 requires it to be agreed in advance and written down.
+
+### Observers
+
+Stakeholders and board-session participants: `@sycom-academy/observers`, read
+access, added for week 4.
+
+---
+
+## Sizing guidance
+
+The scenario material scales further than the operational model does. Injects
+are addressed to **a track**, not to a headcount, so they work unchanged for
+any track size. What does not scale for free is below.
+
+| Cohort size | Works? | What changes |
+|---|---|---|
+| 2–4 interns | Yes, as written | Nothing |
+| 5–8 interns | Yes | Split each track into pairs; pairs take alternate deliverables and review each other's before it reaches a mentor. Board pack needs a named editor |
+| 9–12 interns | Strained | Run two cohorts through the same scenario in parallel rather than one large one. Two board sessions |
+| 13+ | No | Not with this model. The board pack is one joint document and the coordination cost grows faster than the cohort |
+
+**Mentor ratio.** One track mentor per track, plus a moderator who marks
+neither — three is the minimum for independent moderation and it is what rubric
+§7 assumes. Above roughly **four interns per track mentor**, pull request review
+stops fitting in the hours the role brief estimates, and a second mentor on that
+track is needed rather than optional.
+
+**The binding constraint is the board pack, not the mentors.** Inject 09 makes
+it a single joint deliverable assessed as one document. Four authors can write
+one document. Ten cannot, and the failure is not visible until week 4 when
+there is no time to recover. If the cohort is larger than eight, split it.
+
+## Things that change with cohort size
+
+| Item | Where | What to reconsider |
+|---|---|---|
+| Individual adjustment range | Rubric §4, currently ±0.5 bands | Larger teams make free-riding easier to hide. Widen the range, or mark more criteria individually |
+| Joint deliverables | Rubric §4 — C2, C3, D2, D3 marked once for all | With two cohorts, marked once per cohort |
+| The joint half-day | Inject 01 | Above ~6 people it stops being a working session. Split by track, then converge |
+| Board session length | Inject 09 — 90 minutes | Fixed. More presenters means less time each, not a longer session |
+| Consent chain duration | [`WEEKLY-SCHEDULE.md`](WEEKLY-SCHEDULE.md) §3 | Scales with headcount. More people to chase, same deadline |
+
+## After each run
+
+Record what actually happened, so the next cohort is planned on evidence rather
+than on the estimates in the role brief:
+
+| | Estimated | Actual |
+|---|---|---|
+| Mentor hours, total | ~35h for one; less each across three | |
+| Deliverables submitted late | — | |
+| Interns completing (band 3+ in every criterion) | — | |
+| Marker variance found at calibration | — | |
+| Time lost to the fork workflow | — | |

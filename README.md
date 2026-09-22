@@ -2,7 +2,9 @@
 
 Content repository for Sycom Academy GRC/SOC intern work simulation (Project Sentinel).
 
-Pilot scope: 4 interns (2 GRC, 2 SOC), Scenario 1, 4 weeks, week-4 board session.
+Scenario 1, four weeks, week-4 board session. Cohort size, tracks and mentor
+allocation for the current run are in [`00-ADMIN/COHORT.md`](00-ADMIN/COHORT.md) —
+the only file that changes between intakes.
 
 ## Starting out
 

@@ -77,7 +77,7 @@ Target state from the governance document, against what exists today:
 | Team | Intended role | Exists | Members | Repo access |
 |---|---|---|---|---|
 | `ciso` | Admin | Yes | 1 | **None granted** |
-| `mentors` | Maintain | Yes | 1 | Write |
+| `mentors` | Maintain | Yes | **3** | Write |
 | `interns-grc` | Write | **No** | — | — |
 | `interns-soc` | Write | **No** | — | — |
 | `observers` | Read | **No** | — | — |
@@ -110,7 +110,13 @@ Two discrepancies worth a decision rather than a drift:
 Read that table as: **two detective controls are live, no preventive control
 is.** Anyone with write access can push straight to `main` today.
 
-### 4.1 The import deadlock, and the way round it
+### 4.1 The import deadlock — resolved, and the way it was routed around
+
+> **Superseded.** `mentors` has three members, so `main-protection.json` imports
+> without deadlocking and is the ruleset to run. **Swap it for
+> `main-protection-solo`** — one approval and code owner review are now
+> obtainable, and both are stronger than what solo enforces. The rest of this
+> section records why solo existed and why the fork model is kept regardless.
 
 `main-protection.json` requires one approving review, code-owner review and
 last-push approval, with `bypass_actors` empty. `mentors` has one member.
@@ -177,9 +183,19 @@ as an acknowledgement.
 zero required approvals, an intern could merge their own deliverable
 unreviewed. If you keep Write access, do not import the solo ruleset.
 
-**On the day a second mentor accepts:** delete `main-protection-solo` and
-import `main-protection`. Nothing else needs to change, and interns can stay on
-forks.
+**That day has arrived.** Delete `main-protection-solo` and import
+`main-protection`. Nothing else changes, and interns stay on forks.
+
+**The fork model is kept even though it is no longer load-bearing.** With three
+mentors the approval requirement alone would stop an intern merging their own
+work, so Write access would now be safe. Fork is retained because it does not
+depend on a ruleset being configured correctly — an intern with no write access
+cannot merge regardless of what any rule says — and because the onboarding
+guide is written for it two weeks before the pilot. The cost, git complexity
+for beginners, is unchanged but three mentors can absorb the support load.
+
+Revisit after the pilot, when there is evidence about how much the fork
+workflow actually cost the interns.
 
 ### 4.2 Known limit of the secret scanning
 
@@ -253,22 +269,24 @@ If any of those is wrong, §3 and §4 need revisiting before the pilot.
 | 2 | CODEOWNERS resolving | Done, verified | — |
 | 3 | `codeowners` CI guard | Done, green | — |
 | 4 | Scenario — architecture | Done, UK frame | — |
-| 5 | Scenario — client, GRC, SOC material | **Not started** | Writing |
-| 6 | Injects | **Not started** | Writing; depends on 4, 5 |
-| 7 | Rubric and marking scheme | **Not started** | CISO |
-| 8 | Second mentor | **Not started** | A person |
-| 9 | Intern consent | Policy and form written; **forms not issued** | Four people, and a DP sign-off |
-| 10 | Private assessment repo | Scaffold built, not created | GitHub repo creation |
-| 11 | `ciso` write on private repo | Not done | 10 |
-| 12 | Tier C answer key | **Not started** | 10, and 4–6 |
-| 13 | Repo made public | Not done | 9 |
-| 14 | Rulesets imported | Not done | 13, and 8 |
+| 5 | Scenario — client, GRC, SOC material | **Done** | — |
+| 6 | Injects | **Done** — ten, chained | — |
+| 7 | Rubric and marking scheme | **Done** | — |
+| 8 | ~~Second mentor~~ | **Done** — `mentors` has three | — |
+| 9 | Intern consent | Policy and form written; **forms not issued** | The cohort replying, and a DP sign-off |
+| 10 | Private assessment repo | **Done** — created, CODEOWNERS resolving | — |
+| 11 | `ciso` write on private repo | **Done** — verified via `/codeowners/errors` | — |
+| 12 | Tier C answer key | **Done** — 71 weaknesses, ground truth, inject guidance, board questions | — |
+| 13 | Repo made public | **Done** — public, verified anonymously | — |
+| 14 | Rulesets imported | `main-protection-solo` active and verified enforcing. **Swap for `main-protection` now that 8 is done** | — |
 | 15 | `actor_id` in `protected-paths.json` | Not needed — UI import picks the team by name | — |
 | 16 | Custom gitleaks rule for weak passwords | Not done | — |
 
-Items 8 and 9 need other people and do not go faster by being scheduled later.
-Items 5, 6 and 7 are the bulk of the remaining work and nothing unblocks them
-but writing.
+Item 9 — consent — is the only one left that needs other people, and it is the
+critical path. Everything else is either done or is a settings change.
+
+Cohort size, mentor allocation and sizing limits are in [`COHORT.md`](COHORT.md).
+Adding or removing people is [`JOINING.md`](JOINING.md).
 
 ## 9. Open decisions
 
@@ -277,9 +295,10 @@ but writing.
    institution the PRA statements drop out and the resilience framing changes.
 2. **`mentors` — Write or Maintain?** Reality says Write, the document says
    Maintain.
-3. **Ruleset for a one-person team, or wait for the second mentor?** Waiting is
-   cleaner; amending means either a bypass actor or dropping the approval
-   count, and both weaken the evidence the repository exists to produce.
+3. ~~**Ruleset for a one-person team, or wait for the second mentor?**~~
+   **Resolved.** Neither was needed in the end — the fork model removed the
+   dependency, and with three mentors `main-protection` imports cleanly. Swap it
+   in for `main-protection-solo`.
 4. **Does the automation layer write to this repository?** §7 assumes not.
 5. **Pilot start date.** Not recorded anywhere in this repository, and it
    determines whether items 5–7 are a normal writing task or a crisis.

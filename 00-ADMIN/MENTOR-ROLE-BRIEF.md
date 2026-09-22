@@ -1,27 +1,30 @@
-# Second Mentor — Role Brief
+# Mentor Role Brief
 
-Owner: CISO. For use in recruiting the second mentor for the four-week pilot.
+Owner: CISO.
+
+> **Recruitment is done.** `mentors` has three members. This is now an
+> onboarding brief — what the role involves, what it costs in hours, and what
+> disqualifies someone — and remains the reference for the next cohort.
+> §3's option B, external moderator only, is no longer needed.
 
 ---
 
 ## Why this role exists
 
-The pilot runs with one mentor today. That is workable — the ruleset and the
-assessment framework both have single-mentor variants — but three things are
-weaker for it:
+Written while the programme had one mentor, to explain what a second would
+unblock. All three are now resolved, and they are the reason the role matters:
 
-1. **Independent moderation of marks.** A single marker's judgements can be
-   made auditable; they cannot be made independent. Marks awarded by one marker
-   are provisional until moderated, and certificates are not issued against
-   provisional marks.
-2. **Independent review of intern work.** With one mentor, the person who wrote
-   the scenario reviews the work and marks it. That is unavoidable and it is
-   not independence.
-3. **Continuity.** One mentor is a single point of failure over four weeks. If
-   they are ill in week 3, the pilot stops.
+1. **Independent moderation of marks.** A single marker's judgements can be made
+   auditable; they cannot be made independent. With three mentors a moderator
+   who did not do the original marking is available, and marks are final rather
+   than provisional.
+2. **Independent review of intern work.** The person who wrote the scenario no
+   longer has to be the person who reviews and marks it.
+3. **Continuity.** One mentor was a single point of failure over four weeks.
+   Three is cover.
 
-None of these blocks the pilot starting. All three are reasons to fill the role
-before it ends.
+What three mentors introduce instead is **marker variance** — see
+[`ASSESSMENT-RUBRIC.md`](ASSESSMENT-RUBRIC.md) §7. Calibrate before marking.
 
 ## What the role is not
 
@@ -106,15 +109,18 @@ first pilot and nothing here has been timed.
 
 For a full mentor, both are required before the framework is fully operable:
 
-1. Add them to `@sycom-academy/mentors`. The team already holds **Write** on
-   `CYBERINTERNS` and CODEOWNERS resolves against it.
-2. Once they have **accepted** the invitation — an invitation is not membership
-   — swap `main-protection-solo` for `main-protection`, which restores the
-   one-approval and code-owner-review requirements.
+1. Add them to `@sycom-academy/mentors`. The team holds **Write** on
+   `CYBERINTERNS` and CODEOWNERS resolves against it. An invitation is not
+   membership — check they have accepted.
+2. Grant them access to `SYCOM-INTERNSHIP-ASSESSMENT`, where the marks and the
+   tier C scenario key live. The `mentors` team already has Write there.
+3. Have them read the scenario material and `Scenario-Key/` before week 1, and
+   take part in the calibration exercise in rubric §7 before any marking
+   counts.
 
 ## Honest summary for a candidate
 
-A four-week simulated engagement for four interns, split GRC and SOC, against a
+A four-week simulated engagement for a small cohort, split GRC and SOC, against a
 fictional UK digital bank with a deliberately imperfect estate. The scenario,
 injects, client dossier and marking framework are written; the work is running
 it and assessing it. Around 25–30 hours. First run, so some of it will not work

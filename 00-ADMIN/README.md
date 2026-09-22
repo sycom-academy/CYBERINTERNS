@@ -16,6 +16,10 @@ Programme administration. Mentor-owned; interns read but do not write.
 - [`Consent-Form.md`](Consent-Form.md) — the form each intern completes
 - [`WEEKLY-SCHEDULE.md`](WEEKLY-SCHEDULE.md) — the four weeks day by day:
   inject releases, deadlines, mentor load, and what must not slip
+- [`COHORT.md`](COHORT.md) — **the only file that changes between intakes.**
+  Cohort size, tracks, mentor allocation, and sizing guidance
+- [`JOINING.md`](JOINING.md) — adding and removing mentors, interns and
+  observers; what each team gets; offboarding
 - [`REPO-GOVERNANCE.md`](REPO-GOVERNANCE.md) — org structure, rulesets, secret scanning
 - [`PROGRAMME-ARCHITECTURE.md`](PROGRAMME-ARCHITECTURE.md) — how the pilot is
   assembled: content tiers, delivery flow, control plane, and current state

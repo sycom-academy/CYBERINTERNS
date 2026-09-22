@@ -7,6 +7,8 @@ Programme administration. Mentor-owned; interns read but do not write.
 - Marking Scheme
 - Weekly Schedule
 - [`REPO-GOVERNANCE.md`](REPO-GOVERNANCE.md) — org structure, rulesets, secret scanning
+- [`PROGRAMME-ARCHITECTURE.md`](PROGRAMME-ARCHITECTURE.md) — how the pilot is
+  assembled: content tiers, delivery flow, control plane, and current state
 
 ## Criteria live here. Results do not.
 

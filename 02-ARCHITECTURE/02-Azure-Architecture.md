@@ -5,14 +5,14 @@
 
 FinServe's Azure estate was built during the 2023–2024 migration programme
 ("Project Lighthouse") to a hub-and-spoke landing zone pattern. Tenant region
-is `northeurope` with `westeurope` as paired region.
+is `uksouth` with `ukwest` as paired region.
 
 ---
 
 ## 1. Tenant and subscriptions
 
 Single Entra ID tenant: `finservedigital.onmicrosoft.com`, vanity domain
-`finserve.ng`.
+`finserve.co.uk`.
 
 ```mermaid
 flowchart TB
@@ -100,7 +100,7 @@ was never revisited.
 
 | Service | Data | Encryption | Backup |
 |---|---|---|---|
-| Azure SQL MI `sqlmi-prod` | Customer, account, transaction metadata | TDE, service-managed key | Automated, 35-day PITR, weekly LTR to `westeurope` |
+| Azure SQL MI `sqlmi-prod` | Customer, account, transaction metadata | TDE, service-managed key | Automated, 35-day PITR, weekly LTR to `ukwest` |
 | Storage `stfinservedocs` | Statements, uploaded KYC documents | SSE, Microsoft-managed key | GRS, soft delete 30 days |
 | Cache for Redis | Session tokens | In-transit TLS | None — ephemeral by design |
 | Key Vault `kv-finserve-prod` | Certificates, API keys, some connection strings | HSM-backed (Premium) | Soft delete + purge protection on |
@@ -108,7 +108,7 @@ was never revisited.
 
 The nightly UAT refresh copies the production database and applies a masking
 script to customer names and email addresses. Account numbers, balances,
-transaction history and BVN values are copied unmasked, because the UAT test
+transaction history and National Insurance numbers are copied unmasked, because the UAT test
 pack depends on referential consistency with production for reconciliation
 testing.
 
@@ -154,8 +154,8 @@ response or the initial migration — roughly 15% of the estate by resource coun
 ## 6. Resilience
 
 - **RTO** 4 hours, **RPO** 15 minutes for customer-facing services
-- SQL MI Business Critical with a secondary replica in `westeurope`
-- AKS is single-region; a second cluster in `westeurope` is deployed but scaled
+- SQL MI Business Critical with a secondary replica in `ukwest`
+- AKS is single-region; a second cluster in `ukwest` is deployed but scaled
   to zero and is brought up manually
 - Front Door provides failover between regional origins
 
@@ -180,18 +180,24 @@ diagnostics, AKS audit log.
 
 ## 8. Regulatory context
 
-CBN guidelines require that data relating to Nigerian customers be processed
-under conditions the bank can evidence, and that outsourcing arrangements —
-including cloud — be subject to due diligence and contractual control. The
-tenant's primary region is `northeurope`; the data residency position is
-addressed in [04-Data-Flow.md](04-Data-Flow.md) §5 and is the subject of a
-standing legal opinion dated 2024.
+**PRA SS2/21 — Outsourcing and third party risk management** treats this cloud
+estate as material outsourcing. It requires a written agreement, documented due
+diligence, a register of material arrangements, defined exit and substitution
+options, and rights of access and audit for both the firm and the regulators.
+
+**FCA PS21/3 / PRA SS1/21 — Operational resilience** requires the important
+business services running on this estate to be mapped and their impact
+tolerances tested. The untested AKS failover path in §6 is directly in scope.
+
+The tenant's primary and paired regions are both in the UK, so this layer
+raises no Chapter V transfer question on its own; the transfers that do occur
+are in [04-Data-Flow.md](04-Data-Flow.md) §5.
 
 ## 9. Cost and scale
 
 | Metric | Value |
 |---|---|
-| Monthly Azure spend | ~₦ 74m (~USD 47k) |
+| Monthly Azure spend | ~£ 38k |
 | Resource count | ~1,180 |
 | Peak transactions/second | 340 |
 | AKS node count (prod) | 9 |

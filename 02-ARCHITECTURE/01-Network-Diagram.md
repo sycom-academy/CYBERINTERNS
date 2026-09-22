@@ -5,7 +5,7 @@
 
 FinServe operates a hybrid estate. The majority of customer-facing workload
 runs in Azure; a diminishing legacy footprint remains in a co-located data
-centre in Lagos that we have been decommissioning since the 2023 migration
+centre in Slough that we have been decommissioning since the 2023 migration
 programme.
 
 ---
@@ -14,15 +14,15 @@ programme.
 
 | Site | Location | Users | Connectivity |
 |---|---|---|---|
-| HQ | Victoria Island, Lagos | 310 | 2 × 500 Mbps fibre (diverse carriers), ExpressRoute 1 Gbps |
-| DC-LOS | Ikeja co-location, Lagos | — | 1 Gbps to HQ, ExpressRoute 500 Mbps |
-| BR-ABJ | Abuja branch | 55 | 200 Mbps fibre + LTE failover, S2S VPN |
-| BR-PHC | Port Harcourt branch | 48 | 200 Mbps fibre + LTE failover, S2S VPN |
-| BR-KAN | Kano branch | 37 | 100 Mbps fibre, S2S VPN |
+| HQ | Canary Wharf, London | 310 | 2 × 500 Mbps fibre (diverse carriers), ExpressRoute 1 Gbps |
+| DC-SLO | Slough co-location | — | 1 Gbps to HQ, ExpressRoute 500 Mbps |
+| BR-MAN | Manchester branch | 55 | 200 Mbps fibre + LTE failover, S2S VPN |
+| BR-BIR | Birmingham branch | 48 | 200 Mbps fibre + LTE failover, S2S VPN |
+| BR-LEE | Leeds branch | 37 | 100 Mbps fibre, S2S VPN |
 | Remote | Home / field | ~120 concurrent | Azure VPN Gateway (P2S) |
 
 Branches reach Azure over site-to-site VPN terminating on the hub VPN gateway.
-Only HQ and DC-LOS have ExpressRoute.
+Only HQ and DC-SLO have ExpressRoute.
 
 ## 2. Topology
 
@@ -60,14 +60,14 @@ flowchart TB
 
     subgraph ONPREM["On-premises"]
         HQLAN["HQ LAN<br/>172.16.0.0/16"]
-        DCLOS["DC-LOS legacy<br/>172.20.0.0/16"]
+        DCLOS["DC-SLO legacy<br/>172.20.0.0/16"]
         BRANCH["Branches<br/>172.24.0.0/14"]
     end
 
     subgraph EXT["Third parties"]
         CORE["Corebridge<br/>core banking SaaS"]
         SFTP["Partner bank SFTP<br/>payment files"]
-        KYC["VerifyNG<br/>KYC / BVN API"]
+        KYC["IDVerify<br/>electronic ID&amp;V API"]
     end
 
     INET --> CF --> AFD --> AFW
@@ -132,7 +132,7 @@ Branch staff do not have administrative access to anything in Azure.
 Outbound traffic from Azure spokes egresses through Azure Firewall with
 application rules permitting Microsoft services, package repositories
 (`*.nuget.org`, `*.npmjs.org`, `*.pypi.org`), and a named list of partner
-endpoints. On-premises egress from HQ and DC-LOS goes through a pair of
+endpoints. On-premises egress from HQ and DC-SLO goes through a pair of
 Fortigate firewalls with outbound web filtering.
 
 Branch sites egress locally to the internet for general browsing and tunnel
@@ -151,9 +151,9 @@ conserve branch bandwidth.
 | VPN Gateway (P2S + S2S) | Log Analytics | 60 days | Yes |
 | JUMP-01 security event log | Log Analytics via AMA | 60 days | Yes |
 | Domain controllers | Log Analytics via AMA | 60 days | Yes |
-| Fortigate (HQ, DC-LOS) | Syslog → Log Analytics | 60 days | Yes |
+| Fortigate (HQ, DC-SLO) | Syslog → Log Analytics | 60 days | Yes |
 | **Branch firewalls** | Local only | 14 days on device | **No** |
-| **DC-LOS SFTP server** | Local syslog | 30 days on device | **No** |
+| **DC-SLO SFTP server** | Local syslog | 30 days on device | **No** |
 | Corebridge application logs | Held by Corebridge | Per contract | No — accessible by ticket |
 
 Microsoft Sentinel is the SIEM. Analytics rules in production are the Microsoft
@@ -166,17 +166,25 @@ retention was priced during the 2025 budget round and deferred.
 
 ## 7. Regulatory context
 
-CBN's *Risk-Based Cybersecurity Framework and Guidelines for Deposit Money
-Banks and Payment Service Providers* applies. Relevant to this document:
-network segmentation between environments, controlled and logged
-administrative access, and retention of security event logs sufficient to
-support incident investigation.
+FinServe is a UK deposit-taker: PRA-authorised, dual-regulated by the PRA and
+the FCA. Relevant to this document:
+
+- **PRA SS1/21 and FCA PS21/3 — Operational resilience.** Important business
+  services must be mapped to the people, processes, technology and third
+  parties they depend on, with impact tolerances set and tested. The branch
+  sites, the S2S VPN paths and the Corebridge tunnel all sit inside that
+  mapping.
+- **FCA SYSC 4 and 13** — adequate systems and controls, including
+  segregation of environments and control of privileged access.
+- **UK GDPR Article 32** — security of processing, which covers both the
+  segmentation posture and the sufficiency of security event logging to
+  detect and investigate a personal data breach.
 
 ## 8. Known architecture debt
 
 Tracked in the infrastructure backlog, not yet scheduled:
 
-- DC-LOS decommission — 11 workloads remain, target end-2026
+- DC-SLO decommission — 11 workloads remain, target end-2026
 - Branch LAN segmentation — no VLANs below site level
 - Replacement of JUMP-01 with Azure Bastion — deferred 2024, not re-priced
 - IPv6 — not implemented anywhere

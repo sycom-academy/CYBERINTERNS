@@ -4,7 +4,7 @@
 **Last reviewed:** 2025-08-22 · **Next review:** annual
 
 Single tenant `finservedigital.onmicrosoft.com`, shared with the Azure estate.
-Primary SMTP domain `finserve.ng`. Migrated from on-premises Exchange 2016 in
+Primary SMTP domain `finserve.co.uk`. Migrated from on-premises Exchange 2016 in
 2023; the last mailbox moved in October 2023.
 
 ---
@@ -69,7 +69,7 @@ members, all of whom also hold day-to-day workstation accounts.
 | 2 | Require MFA for admins | 8 directory roles | MFA, sign-in frequency 4h |
 | 3 | Block legacy authentication | All users | Block |
 | 4 | Require compliant device — Azure management | All users | Compliant device |
-| 5 | Block access from outside Nigeria, UK, UAE | All users | Block |
+| 5 | Block access from outside the UK, Ireland and Spain | All users | Block |
 | 6 | Require MFA for guests | Guests | MFA |
 | 7 | Session controls for unmanaged devices | All users | App-enforced restrictions |
 | 8 | Require terms of use | New starters | ToU |
@@ -88,7 +88,7 @@ twice.
 
 - 470 user mailboxes, 38 shared mailboxes, 12 resource mailboxes
 - Inbound mail: Exchange Online Protection, no third-party gateway
-- SPF, DKIM and DMARC published for `finserve.ng`; DMARC policy is `p=none`
+- SPF, DKIM and DMARC published for `finserve.co.uk`; DMARC policy is `p=none`
 - External sender warning banner enabled tenant-wide
 - Mailbox audit logging on by default
 - Auto-forwarding to external domains blocked by outbound spam policy
@@ -128,9 +128,9 @@ measured in the June 2025 review was 18% of documents in scope.
 
 Three DLP policies are enabled:
 
-1. **Nigerian BVN and NIN** — blocks sharing outside the organisation, applies
-   to Exchange, SharePoint, OneDrive and Teams. Notification to user, incident
-   report to `dlp-alerts@finserve.ng`.
+1. **UK National Insurance number** — blocks sharing outside the organisation,
+   applies to Exchange, SharePoint, OneDrive and Teams. Notification to user,
+   incident report to `dlp-alerts@finserve.co.uk`.
 2. **Payment card numbers** — blocks external sharing, Exchange and SharePoint.
 3. **Credentials in email** — tip only, no block.
 
@@ -139,9 +139,11 @@ DLP does not extend to Endpoint (Endpoint DLP is not enabled) or to the
 M365.
 
 Retention: a single tenant-wide policy retains all Exchange, SharePoint and
-OneDrive content for 7 years, aligned to the CBN record-keeping expectation.
-There is no disposition review and no separate retention for Teams chat, which
-falls under the same 7-year rule.
+OneDrive content for 7 years. The policy was set in 2023 on the stated basis of
+"regulatory record keeping"; the Money Laundering Regulations 2017 requirement
+it was intended to satisfy is 5 years from the end of the customer
+relationship. There is no disposition review and no separate retention for
+Teams chat, which falls under the same 7-year rule.
 
 ## 6. Endpoint
 
@@ -179,15 +181,23 @@ E3/F3 users is 90 days against the E5 cohort's 180.
 
 ## 8. Regulatory context
 
-CBN guidelines and the NDPA 2023 both bear on this layer. NDPA obligations
-attach to the personal data in mailboxes, SharePoint and the KYC document
-store — lawful basis, data subject rights including access and erasure, and
-breach notification to the NDPC within 72 hours of becoming aware.
+**UK GDPR and DPA 2018** obligations attach to the personal data in mailboxes,
+SharePoint and the ID document store — lawful basis, data subject rights
+including access and erasure, and breach notification to the ICO within 72
+hours of becoming aware.
 
-The 7-year retention policy and the NDPA storage limitation principle are in
-tension for categories of personal data with no statutory retention
-requirement. A data retention schedule mapping category to period was drafted
-by the compliance team in 2024 and has not been signed off.
+**Money Laundering Regulations 2017** set customer due diligence record
+retention at 5 years from the end of the relationship, and expressly require
+deletion at the end of that period unless another basis applies.
+
+The two bite together: the tenant-wide 7-year policy exceeds the MLR period by
+two years and applies indiscriminately to content with no statutory retention
+requirement at all, which runs against the UK GDPR storage limitation
+principle. A data retention schedule mapping category to period was drafted by
+the compliance team in 2024 and has not been signed off.
+
+**FCA SYSC 10A** requires recording of certain client communications; the
+current Teams chat retention is not differentiated for that purpose.
 
 ## 9. Known debt
 

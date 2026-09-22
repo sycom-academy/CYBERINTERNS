@@ -56,8 +56,9 @@ a weakness, and that is deliberate.
 
 | Assumption | Value | Change if wrong |
 |---|---|---|
-| Regulator | Central Bank of Nigeria (CBN) | Swap the *Regulatory context* section in each document |
-| Data protection regime | NDPA 2023, NDPC as supervisory authority | Same |
+| Regulator | PRA-authorised, dual-regulated by PRA and FCA | Swap the *Regulatory context* section in each document |
+| Data protection regime | UK GDPR + DPA 2018, ICO as supervisory authority | Same |
+| AML regime | Money Laundering Regulations 2017 | Retention tables in 03 and 04 |
 | Financial year | January–December | 00-ADMIN schedule |
 | Estate size | ~450 staff, ~180,000 retail customers | Asset register scale |
 

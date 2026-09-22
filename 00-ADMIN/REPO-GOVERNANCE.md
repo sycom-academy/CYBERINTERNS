@@ -33,7 +33,12 @@ than pay for a four-week pilot, the content is split by sensitivity:
 | Repository | Visibility | Holds | Who can see it |
 |---|---|---|---|
 | `CYBERINTERNS` | **public** | Scenario material, intern deliverables, board pack | Everyone |
-| `SYCOM-INTERNSHIP-ASSESSMENT` | **private** | Marks, rubric scores, feedback, certificates | CISO + mentors |
+| `SYCOM-INTERNSHIP-ASSESSMENT` | **private** | Marks, feedback, moderation notes, certificates | CISO + mentors |
+
+The line is **criteria public, results private**. The rubric and marking scheme
+stay in `00-ADMIN/` where interns can read them — publishing the criteria is
+what makes the marks defensible. Only records about an identifiable person move
+to the private repo.
 
 This is better governance than one private repo, not just a cheaper one. The
 people being assessed should not share a permission boundary with their own

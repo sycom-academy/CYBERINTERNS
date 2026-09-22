@@ -263,7 +263,7 @@ If any of those is wrong, §3 and §4 need revisiting before the pilot.
 | 12 | Tier C answer key | **Not started** | 10, and 4–6 |
 | 13 | Repo made public | Not done | 9 |
 | 14 | Rulesets imported | Not done | 13, and 8 |
-| 15 | `actor_id` in `protected-paths.json` | Placeholder `0` | Team id lookup |
+| 15 | `actor_id` in `protected-paths.json` | Not needed — UI import picks the team by name | — |
 | 16 | Custom gitleaks rule for weak passwords | Not done | — |
 
 Items 8 and 9 need other people and do not go faster by being scheduled later.

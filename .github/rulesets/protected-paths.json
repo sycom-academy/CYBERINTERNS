@@ -1,8 +1,10 @@
 {
   "name": "protected-paths",
   "target": "push",
-  "source_type": "Repository",
   "enforcement": "active",
+  "_comment_1": "IMPORT VIA THE UI, NOT THE API. Settings > Rules > Rulesets > New ruleset > New push ruleset. The bypass list is set in the form by picking the mentors team BY NAME, which is why actor_id below is still a placeholder - it is only needed for an API import, and API writes are not available here.",
+  "_comment_2": "PLAN-GATED. Push rulesets are an organisation feature and the file-path and file-extension rules in particular may require GitHub Enterprise Cloud. If the form will not offer them on this plan, the max_file_size rule is still worth having on its own, and the CODEOWNERS entry for /.github/ plus the main-protection-solo branch ruleset already force review of anything reaching main.",
+  "_comment_3": "SCOPE CHANGED. The file_path_restriction was written when interns were to hold Write on this repository and needed to be kept out of 00-ADMIN and .github. Under the fork model they hold no write access and cannot push any branch here, so that rule now constrains only mentors - who bypass it. Keep it as belt-and-braces and because it becomes load-bearing again the moment anyone is granted Write. The size and extension rules apply to everyone and earn their place regardless.",
   "conditions": {},
   "rules": [
     {
@@ -40,7 +42,7 @@
       "actor_id": 0,
       "actor_type": "Team",
       "bypass_mode": "always",
-      "_comment": "REPLACE actor_id 0 with the numeric id of @sycom-academy/mentors before import. Get it with: GET /orgs/sycom-academy/teams/mentors -> .id"
+      "_comment": "Placeholder. Needed ONLY for an API import. For the UI import, pick @sycom-academy/mentors in the bypass-actors picker and ignore this value. To fill it in: gh api /orgs/sycom-academy/teams/mentors --jq .id"
     }
   ]
 }

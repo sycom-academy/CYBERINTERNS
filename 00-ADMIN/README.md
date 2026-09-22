@@ -14,7 +14,8 @@ Programme administration. Mentor-owned; interns read but do not write.
 - [`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md) — what
   publication means, the three participation modes, and how consent is taken
 - [`Consent-Form.md`](Consent-Form.md) — the form each intern completes
-- Weekly Schedule (pending)
+- [`WEEKLY-SCHEDULE.md`](WEEKLY-SCHEDULE.md) — the four weeks day by day:
+  inject releases, deadlines, mentor load, and what must not slip
 - [`REPO-GOVERNANCE.md`](REPO-GOVERNANCE.md) — org structure, rulesets, secret scanning
 - [`PROGRAMME-ARCHITECTURE.md`](PROGRAMME-ARCHITECTURE.md) — how the pilot is
   assembled: content tiers, delivery flow, control plane, and current state

@@ -37,7 +37,7 @@ opposite directions, and neither can answer the board alone.
 | 06 | [Anomalous mailbox access](Inject-06-Mailbox-Access.md) | W3 D1 07:15 | SOC | W3 D3 |
 | 07 | [Non-production data discovery](Inject-07-UAT-Data-Discovery.md) | W3 D2 11:00 | Both | W3 D4 |
 | 08 | [The regulatory clock](Inject-08-Regulatory-Clock.md) | W3 D3 16:30 | GRC | W3 D5 |
-| 09 | [Board pack brief](Inject-09-Board-Pack-Brief.md) | W4 D1 09:00 | Both | W4 D4 |
+| 09 | [Board pack brief](Inject-09-Board-Pack-Brief.md) | W4 D1 09:00 | Both | W4 D3 09:00 |
 | 10 | [Board curveball](Inject-10-Board-Curveball.md) | W4 D4, in session | Both | Live |
 
 Times are in-world. Release them at the equivalent point in the working day if

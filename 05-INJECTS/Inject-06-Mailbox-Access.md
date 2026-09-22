@@ -7,8 +7,8 @@
 ## Artefact 1 — inbound, 07:12
 
 > **From:** Operations Risk, Meridian Trust plc
-> **To:** settlement.ops@finserve.co.uk
-> **Cc:** p.raman@finserve.co.uk
+> **To:** settlement.ops@finserve.example
+> **Cc:** p.raman@finserve.example
 > **Date:** W3 D1, 07:12
 > **Subject:** URGENT — unexpected authentication activity, finserve_settle
 >

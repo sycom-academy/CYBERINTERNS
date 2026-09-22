@@ -62,7 +62,7 @@ Each card has the same five parts:
   them through. Mentors only — see `.gitleaks.toml`.
 - In-world dates are relative (`W2 D1`). Substitute real dates when you run it.
 - All artefacts are fictional, including sender names, domains and addresses.
-  Domains use `.example` or the fictional `finserve.co.uk` estate.
+  Domains use `.example` or the fictional `finserve.example` estate.
 - New injects: `Inject-NN-Short-Name.md`, add a row to the schedule above.
 
 ## Running notes

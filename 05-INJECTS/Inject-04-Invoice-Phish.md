@@ -6,18 +6,18 @@
 
 ## Artefact 1 — the reported email
 
-Forwarded to `phishing@finserve.co.uk` by a Finance Operations analyst at
+Forwarded to `phishing@finserve.example` by a Finance Operations analyst at
 08:31, with the note *"This doesn't look right but Nadia says she sent it?"*
 
 ```
 Received: from mail-ukw1-f174.outbound.smtpsvc.example (203.0.113.87)
  by GB2PR09MB4417.eurprd09.prod.outlook.com with HTTPS; W2 D1 07:52:11 +0000
 Authentication-Results: spf=fail (sender IP is 203.0.113.87)
- smtp.mailfrom=finserve.co.uk; dkim=none (message not signed)
- header.d=none; dmarc=fail action=none header.from=finserve.co.uk
-From: "Nadia Ferreira" <n.ferreira@finserve.co.uk>
+ smtp.mailfrom=finserve.example; dkim=none (message not signed)
+ header.d=none; dmarc=fail action=none header.from=finserve.example
+From: "Nadia Ferreira" <n.ferreira@finserve.example>
 Reply-To: "Nadia Ferreira" <n.ferreira@finserve-co.example>
-To: "Rachel Oduya" <r.oduya@finserve.co.uk>
+To: "Rachel Oduya" <r.oduya@finserve.example>
 Subject: Meridian Trust — revised settlement schedule, needs sign-off today
 Date: W2 D1 07:52:09 +0000
 X-Originating-IP: [203.0.113.87]
@@ -42,7 +42,7 @@ X-Originating-IP: [203.0.113.87]
 
 **Notes from the service desk ticket (SD-2026-4417):**
 Six recipients, all in Finance Operations. Four deleted it. One reported it at
-08:31. One — `r.oduya@finserve.co.uk` — replied to the sender at 07:58 saying
+08:31. One — `r.oduya@finserve.example` — replied to the sender at 07:58 saying
 "done".
 
 ---
@@ -55,7 +55,7 @@ Title         : Atypical travel involving one user
 Severity      : Medium
 Status        : New
 Analytics rule: Microsoft built-in — "Atypical travel"
-Entity        : r.oduya@finserve.co.uk
+Entity        : r.oduya@finserve.example
 First activity: W2 D1 07:59:44 UTC
 ```
 
@@ -79,7 +79,7 @@ Policy 9 — High sign-in risk, require password change . Not applied (risk = lo
 
 ---
 
-## Artefact 3 — Unified Audit Log extract, `r.oduya@finserve.co.uk`
+## Artefact 3 — Unified Audit Log extract, `r.oduya@finserve.example`
 
 ```
 W2 D1 08:02:44  New-InboxRule  Name="...."  SubjectOrBodyContainsWords="meridian;settlement;reconciliation"

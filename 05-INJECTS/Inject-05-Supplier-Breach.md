@@ -7,7 +7,7 @@
 ## Artefact 1 — the notification
 
 > **From:** compliance@textway.example
-> **To:** p.raman@finserve.co.uk; procurement@finserve.co.uk
+> **To:** p.raman@finserve.example; procurement@finserve.example
 > **Date:** W2 D3, 13:47
 > **Subject:** Security incident notification — Textway Communications Ltd
 >

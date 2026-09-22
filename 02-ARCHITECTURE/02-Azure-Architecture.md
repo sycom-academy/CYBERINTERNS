@@ -12,7 +12,7 @@ is `uksouth` with `ukwest` as paired region.
 ## 1. Tenant and subscriptions
 
 Single Entra ID tenant: `finservedigital.onmicrosoft.com`, vanity domain
-`finserve.co.uk`.
+`finserve.example`.
 
 ```mermaid
 flowchart TB

@@ -4,7 +4,7 @@
 **Last reviewed:** 2025-08-22 · **Next review:** annual
 
 Single tenant `finservedigital.onmicrosoft.com`, shared with the Azure estate.
-Primary SMTP domain `finserve.co.uk`. Migrated from on-premises Exchange 2016 in
+Primary SMTP domain `finserve.example`. Migrated from on-premises Exchange 2016 in
 2023; the last mailbox moved in October 2023.
 
 ---
@@ -88,7 +88,7 @@ twice.
 
 - 470 user mailboxes, 38 shared mailboxes, 12 resource mailboxes
 - Inbound mail: Exchange Online Protection, no third-party gateway
-- SPF, DKIM and DMARC published for `finserve.co.uk`; DMARC policy is `p=none`
+- SPF, DKIM and DMARC published for `finserve.example`; DMARC policy is `p=none`
 - External sender warning banner enabled tenant-wide
 - Mailbox audit logging on by default
 - Auto-forwarding to external domains blocked by outbound spam policy
@@ -130,7 +130,7 @@ Three DLP policies are enabled:
 
 1. **UK National Insurance number** — blocks sharing outside the organisation,
    applies to Exchange, SharePoint, OneDrive and Teams. Notification to user,
-   incident report to `dlp-alerts@finserve.co.uk`.
+   incident report to `dlp-alerts@finserve.example`.
 2. **Payment card numbers** — blocks external sharing, Exchange and SharePoint.
 3. **Credentials in email** — tip only, no block.
 

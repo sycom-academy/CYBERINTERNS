@@ -11,7 +11,7 @@ a conversation goes the way it does.
 ## 1. Your sponsor
 
 **Priya Raman — Chief Information Security Officer**
-`p.raman@finserve.co.uk`
+`p.raman@finserve.example`
 
 Joined 2022 after the Kestrel acquisition raised security at diligence.
 Previously deputy CISO at a mid-size building society. Commissioned this

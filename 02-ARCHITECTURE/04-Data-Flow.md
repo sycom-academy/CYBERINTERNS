@@ -164,7 +164,7 @@ D5 behavioural data in Azure SQL has no deletion routine. The table
 ## 7. Data subject rights
 
 Access, rectification and erasure requests arrive via
-`dpo@finserve.co.uk` and are handled manually by the DPO with support from the
+`dpo@finserve.example` and are handled manually by the DPO with support from the
 platform team. There is no automated discovery across systems; fulfilment
 involves queries against Azure SQL, a search in Purview for M365 content, and a
 ticket to Corebridge.

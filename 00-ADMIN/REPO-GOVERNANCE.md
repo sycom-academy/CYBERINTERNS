@@ -130,11 +130,18 @@ A push ruleset that blocks any push touching `00-ADMIN/` or `.github/`, with
 because assessment records are not in this repository at all. Also caps file size at 50 MB
 and blocks credential file extensions at push time.
 
-**Before importing**, replace `actor_id: 0` with the real numeric team id:
+**Import this through the UI, not the API.** The bypass list is set in the form
+by picking `@sycom-academy/mentors` by name, so the `actor_id: 0` placeholder in
+the file never needs filling in. It matters only for an API import, and if you
+do want the file API-ready the id is `gh api /orgs/sycom-academy/teams/mentors --jq .id`.
 
-```
-GET /orgs/sycom-academy/teams/mentors   -->   .id
-```
+**The scope of this ruleset has narrowed.** `file_path_restriction` was written
+when interns were to hold Write here and had to be kept out of `00-ADMIN/` and
+`.github/`. Under the fork model they hold no write access and cannot push a
+branch to this repository at all, so that rule now constrains only mentors —
+who bypass it. Keep it: it costs nothing and becomes load-bearing again the
+moment anyone is granted Write. The size and extension rules apply to everyone
+and are worth having on their own.
 
 Push rulesets are an organisation-repo feature and some rules are plan-gated.
 Verify both import cleanly on your plan before relying on them; if

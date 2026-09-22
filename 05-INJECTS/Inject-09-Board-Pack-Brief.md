@@ -1,6 +1,6 @@
 # Inject 09 — Board pack brief
 
-**Release:** Week 4, Day 1, 09:00 · **Team:** Both · **Deliverable due:** W4 D4, 09:00
+**Release:** Week 4, Day 1, 09:00 · **Team:** Both · **Deliverable due:** W4 D3, 09:00 · **Board session:** W4 D4, 14:00
 
 ---
 

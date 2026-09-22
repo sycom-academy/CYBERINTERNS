@@ -2,10 +2,11 @@
 
 Programme administration. Mentor-owned; interns read but do not write.
 
-- Mentor Guide
-- Assessment Framework / Rubric v1 (pending — CISO to write)
-- Marking Scheme
-- Weekly Schedule
+- Mentor Guide (pending)
+- [`ASSESSMENT-RUBRIC.md`](ASSESSMENT-RUBRIC.md) — assessment framework and
+  marking scheme. **Read before week 1.** Criteria, four-band scale,
+  weightings, and how team and individual marks are arrived at
+- Weekly Schedule (pending)
 - [`REPO-GOVERNANCE.md`](REPO-GOVERNANCE.md) — org structure, rulesets, secret scanning
 - [`PROGRAMME-ARCHITECTURE.md`](PROGRAMME-ARCHITECTURE.md) — how the pilot is
   assembled: content tiers, delivery flow, control plane, and current state

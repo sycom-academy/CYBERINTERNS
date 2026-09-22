@@ -6,6 +6,8 @@ Programme administration. Mentor-owned; interns read but do not write.
 - [`ASSESSMENT-RUBRIC.md`](ASSESSMENT-RUBRIC.md) — assessment framework and
   marking scheme. **Read before week 1.** Criteria, four-band scale,
   weightings, and how team and individual marks are arrived at
+- [`MENTOR-ROLE-BRIEF.md`](MENTOR-ROLE-BRIEF.md) — recruiting the second
+  mentor: what the role is, the two ways to fill it, time commitment
 - Weekly Schedule (pending)
 - [`REPO-GOVERNANCE.md`](REPO-GOVERNANCE.md) — org structure, rulesets, secret scanning
 - [`PROGRAMME-ARCHITECTURE.md`](PROGRAMME-ARCHITECTURE.md) — how the pilot is

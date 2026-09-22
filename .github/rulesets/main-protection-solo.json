@@ -1,0 +1,50 @@
+{
+  "name": "main-protection-solo",
+  "target": "branch",
+  "source_type": "Repository",
+  "enforcement": "active",
+  "_comment": "SOLO VARIANT. Import this INSTEAD OF main-protection.json while @sycom-academy/mentors has exactly one member. It requires no approving review, because with one mentor no approval can be obtained. It is only safe alongside the fork-based contribution model: interns must hold NO write access to this repository. See 00-ADMIN/PROGRAMME-ARCHITECTURE.md section 4.1. Replace with main-protection.json the day a second mentor accepts.",
+  "conditions": {
+    "ref_name": {
+      "include": [
+        "~DEFAULT_BRANCH"
+      ],
+      "exclude": []
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "required_linear_history"
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "required_status_checks": [
+          { "context": "gitleaks" },
+          { "context": "codeowners" }
+        ]
+      }
+    },
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 0,
+        "require_code_owner_review": false,
+        "dismiss_stale_reviews_on_push": false,
+        "require_last_push_approval": false,
+        "required_review_thread_resolution": true,
+        "allowed_merge_methods": [
+          "squash"
+        ]
+      }
+    }
+  ],
+  "bypass_actors": []
+}

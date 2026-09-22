@@ -278,10 +278,44 @@ merge. Marks and written feedback are recorded in the private
 `SYCOM-INTERNSHIP-ASSESSMENT` repository. **No mark, score, feedback note or
 moderation comment enters this repository at any point.**
 
-**Moderation.** All final marks are moderated by a second mentor who did not do
-the original marking, and signed off by the CISO. Moderation checks
-consistency between the two tracks — the two A-criteria sets are different
-instruments and must be calibrated against each other, not just internally.
+**Moderation.** Two marks are awarded: independent moderation, or, where there
+is only one marker, the single-marker protocol below.
+
+*Two or more mentors.* All final marks are moderated by a mentor who did not do
+the original marking, and signed off by the CISO. Moderation checks consistency
+between the two tracks — the two A-criteria sets are different instruments and
+must be calibrated against each other, not just internally.
+
+*One mentor.* Independent moderation is impossible and nothing substitutes for
+it. What follows reduces the two errors a single marker is most prone to —
+drift across a cohort, and the halo effect where a strong impression on one
+criterion colours the rest — and makes the marks auditable afterwards:
+
+1. **Mark by criterion, not by person.** Mark criterion A1 for every intern,
+   then A2, and so on. Marking a person's whole set at once is what produces
+   halo effects; this is the single most effective control available to one
+   marker.
+2. **Write the rationale before the band.** For each mark, write the sentence
+   that justifies it against a named descriptor, then award the band. Reversing
+   that order rationalises a number already chosen.
+3. **Blind re-mark a sample.** After all marking is complete, wait at least 48
+   hours, then re-mark two deliverables without reference to the original
+   marks. A band's difference on either is a signal of drift; investigate
+   rather than average.
+4. **Mark the tracks in a fixed order and record it.** Drift is directional,
+   so the order matters and must be known when the marks are reviewed.
+5. **Deferred moderation.** Marks are recorded as **provisional**. They become
+   final when either a second mentor moderates them, or the CISO signs them off
+   having read the rationales against this document. Certificates are not
+   issued against provisional marks.
+6. **Say so.** Interns are told at the start that the pilot runs with a single
+   marker, what that means, and what the protocol is. Their right of challenge
+   below matters more, not less, under single marking.
+
+An external moderator — the co-source audit firm, or an assessor from another
+programme — satisfies the "two or more mentors" route and does not have to be a
+FinServe mentor or hold repository access. Sending anonymised deliverables and
+the rationales is sufficient.
 
 **Feedback.** Formative feedback is given in PR review as work is merged. That
 is the fastest loop available and it is the main one. Summative feedback is
@@ -298,10 +332,13 @@ the marker should be able to have on the spot.
 
 Recorded honestly rather than assumed:
 
-1. **Moderation requires a second mentor.** §7 requires a moderator who did not
-   do the original marking. The `mentors` team currently has one member. Until
-   there are two, moderation cannot happen as described and the framework is
-   not fully operable.
+1. **Independent moderation requires a second marker.** The `mentors` team has
+   one member. §7 now carries a single-marker protocol so the framework is
+   operable, and marks awarded under it are **provisional** until either a
+   second mentor moderates them or the CISO signs them off against the
+   rationales. Certificates are not issued against provisional marks. An
+   external moderator satisfies this without needing repository access, and is
+   the cheaper route if a second mentor is not close.
 2. **Lawful basis and retention for assessment records** must be decided before
    the first mark is recorded. Flagged in the private repository's README.
 3. **Inject 10 questions** are written from the submitted board pack on W4 D3

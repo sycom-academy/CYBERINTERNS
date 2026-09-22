@@ -110,19 +110,76 @@ Two discrepancies worth a decision rather than a drift:
 Read that table as: **two detective controls are live, no preventive control
 is.** Anyone with write access can push straight to `main` today.
 
-### 4.1 The import deadlock
+### 4.1 The import deadlock, and the way round it
 
 `main-protection.json` requires one approving review, code-owner review and
 last-push approval, with `bypass_actors` empty. `mentors` has one member.
-GitHub does not permit self-approval, so importing the ruleset as written makes
-every PR authored by the sole mentor unmergeable — with no bypass.
+GitHub does not permit self-approval, so importing that ruleset as written
+makes every PR authored by the sole mentor unmergeable — with no bypass.
 
-Making CODEOWNERS resolve is what arms this. Before today the code-owner
-requirement would have silently no-opped; now it would bite.
+Making CODEOWNERS resolve is what arms this. Before it resolved, the code-owner
+requirement silently no-opped; now it would bite.
 
-**Do not import `main-protection` until `mentors` has a second accepted
-member,** or until the ruleset is amended for a one-person team. Both options
-are recorded in §8.
+**The deadlock is not a GitHub limitation. It is a consequence of one design
+choice**, made in `REPO-GOVERNANCE.md`: interns are given **Write** on this
+repository, and the thing stopping them merging their own work is the approval
+requirement. An approval requires a second human. So the whole control model
+rests on a person who does not exist.
+
+#### The fork model
+
+Take the write access away and "cannot merge" stops being a rule that needs
+enforcing and becomes a fact about access:
+
+| | Write model (as designed) | Fork model |
+|---|---|---|
+| Intern repo access | Write | **None** — public read only |
+| Intern works on | a branch in this repo | a branch in their own fork |
+| Opens PR | from this repo | from their fork |
+| Can merge own PR? | Only prevented by approval count | **Cannot. No write access** |
+| Needs a second mentor to be safe? | **Yes** | **No** |
+| Contribution evidence | PR authorship and review threads | Identical |
+
+This is how every open-source project on GitHub operates, it costs nothing,
+and it removes the second-mentor dependency from the control model entirely.
+
+Two real costs, stated rather than glossed:
+
+- **Git complexity.** Interns must fork, add an upstream remote, and keep their
+  fork in sync. For people new to git that is a genuine additional thing to
+  learn in week 1, and it will produce support questions.
+- **It needs the repository to be public.** Forking a private repository is
+  possible but messy. This is not a new dependency — going public is already
+  required for rulesets at all.
+
+#### `main-protection-solo.json`
+
+Import this **instead of** `main-protection.json` while `mentors` has one
+member. Differences, and nothing else changes:
+
+| Parameter | Full | Solo |
+|---|---|---|
+| `required_approving_review_count` | 1 | **0** |
+| `require_code_owner_review` | true | **false** |
+| `require_last_push_approval` | true | **false** |
+| `dismiss_stale_reviews_on_push` | true | **false** |
+
+Everything else is identical. With one mentor it still enforces: no direct
+push to `main`, both CI checks green before merge, branch up to date with
+`main`, linear history, squash-only, no force-push, no deletion, and all review
+threads resolved.
+
+What it gives up is an approving review by a second human — which cannot be
+obtained with one mentor under any configuration, so it is not a trade so much
+as an acknowledgement.
+
+**It is only safe alongside the fork model.** With interns holding Write and
+zero required approvals, an intern could merge their own deliverable
+unreviewed. If you keep Write access, do not import the solo ruleset.
+
+**On the day a second mentor accepts:** delete `main-protection-solo` and
+import `main-protection`. Nothing else needs to change, and interns can stay on
+forks.
 
 ### 4.2 Known limit of the secret scanning
 

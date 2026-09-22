@@ -13,7 +13,7 @@ Pilot scope: 4 interns (2 GRC, 2 SOC), Scenario 1, 4 weeks, week-4 board session
 - `04-SOC` — alerts, logs, IOCs, threat intel, incident tickets
 - `05-INJECTS` — the scripted inject cards released to teams during the simulation
 - `06-DELIVERABLES` — intern work products, split by team
-- `07-FINAL` — board pack, assessment records, certificates
+- `07-FINAL` — week-4 board pack (assessment records live in a separate private repo)
 
 Delivery, gating and logging for this content are handled by the Tier 1 automation
 layer described in the pilot plan doc — this repo holds the content it serves and

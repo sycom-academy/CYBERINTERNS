@@ -22,6 +22,6 @@
 /02-ARCHITECTURE/       @sycom-academy/mentors
 /05-INJECTS/            @sycom-academy/mentors
 
-# Assessment records and certificates. CISO only — not general mentors.
-/07-FINAL/Assessment/   @sycom-academy/ciso
-/07-FINAL/Certificates/ @sycom-academy/ciso
+# Board pack. Assessment records and certificates are NOT in this repo — they
+# live in the private SYCOM-INTERNSHIP-ASSESSMENT repo. See 07-FINAL/README.md.
+/07-FINAL/              @sycom-academy/mentors

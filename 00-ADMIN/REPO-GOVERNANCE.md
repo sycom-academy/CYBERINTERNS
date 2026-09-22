@@ -24,11 +24,41 @@ The fourth row is the honest one. A GRC intern *can* open a PR touching
 see it. Accept that, or split into separate repositories per team — which costs
 you the single board pack and the cross-team visibility the scenario depends on.
 
+## Two repositories, not one
+
+The controls this programme needs — branch protection, rulesets, native secret
+scanning — are **free on public repositories and paid on private ones**. Rather
+than pay for a four-week pilot, the content is split by sensitivity:
+
+| Repository | Visibility | Holds | Who can see it |
+|---|---|---|---|
+| `CYBERINTERNS` | **public** | Scenario material, intern deliverables, board pack | Everyone |
+| `SYCOM-INTERNSHIP-ASSESSMENT` | **private** | Marks, rubric scores, feedback, certificates | CISO + mentors |
+
+This is better governance than one private repo, not just a cheaper one. The
+people being assessed should not share a permission boundary with their own
+assessment records. Splitting them makes that structural rather than a matter
+of everyone remembering which directory is sensitive.
+
+`07-FINAL/Assessment/` and `07-FINAL/Certificates/` have been removed from this
+repository accordingly. `07-FINAL/` now holds the board pack only.
+
+### Consent is a prerequisite, not a formality
+
+Making this repo public means every intern's commits, name, GitHub handle and
+work product are permanently world-readable, and forks and mirrors survive any
+later change of mind. Get written consent from each intern **before** they push
+anything, and offer an alternative to anyone who declines — a private fork
+reviewed by a mentor, or working under a pseudonymous account. An intern should
+not have to choose between a training placement and a public record of their
+first attempt at a risk register.
+
 ## Organisation structure
 
-Move the repository off the `sycomsolutions` personal account into an
+Move both repositories off the `sycomsolutions` personal account into an
 organisation. A personal account gives no teams, no role separation, and no
-continuity if that account is lost.
+continuity if that account is lost. GitHub Free for organisations is
+sufficient — there is nothing to pay.
 
 **Org:** `sycom-academy`
 
@@ -77,9 +107,9 @@ which is logged, unlike a silent bypass.
 
 ### 2. `protected-paths` (`.github/rulesets/protected-paths.json`)
 
-A push ruleset that blocks any push touching `00-ADMIN/`,
-`07-FINAL/Assessment/`, `07-FINAL/Certificates/` or `.github/`, with
-`@sycom-academy/mentors` as the only bypass actor. Also caps file size at 50 MB
+A push ruleset that blocks any push touching `00-ADMIN/` or `.github/`, with
+`@sycom-academy/mentors` as the only bypass actor. Assessment paths are absent
+because assessment records are not in this repository at all. Also caps file size at 50 MB
 and blocks credential file extensions at push time.
 
 **Before importing**, replace `actor_id: 0` with the real numeric team id:
@@ -95,9 +125,7 @@ still forces CISO review, which is the weaker but workable fallback.
 
 ## Code owners
 
-`.github/CODEOWNERS` routes every path to `@sycom-academy/mentors`, with
-`07-FINAL/Assessment/` and `07-FINAL/Certificates/` reserved to
-`@sycom-academy/ciso`.
+`.github/CODEOWNERS` routes every path to `@sycom-academy/mentors`.
 
 Intern teams are **not** code owners of their own directories. If they were,
 one GRC intern could approve the other's deliverable and satisfy the review
@@ -106,13 +134,16 @@ peer as a second reviewer, not as the gate.
 
 ## Secret scanning
 
-GitHub's native secret scanning and push protection are **not available** on
-this repository. They are free on public repos only; on a private repo they
-require GitHub Advanced Security / Secret Protection, a paid per-committer
-add-on. Going private was the right call, but it cost us that control.
+Two layers, because they catch different things.
 
-The replacement is gitleaks, run in CI by `.github/workflows/secret-scan.yml`
-on every pull request into `main` and on every push to `main`.
+**GitHub native secret scanning with push protection** is free on public
+repositories, and this repository is public. Enable it at Settings -> Code
+security. Push protection is stronger than anything in CI: it rejects the push
+itself, so the credential never lands in any branch.
+
+**gitleaks in CI** (`.github/workflows/secret-scan.yml`) runs on every pull
+request into `main` and every push to `main`. It is not redundant — it unpacks
+Office documents, which GitHub's scanner does not do.
 
 Three scans run per job, any one of which fails the check:
 
@@ -163,8 +194,9 @@ where this repo is heading.
   `.xlsx`, but a credential visible in a screenshot is just pixels. No scanner
   in this setup reads it. The control is the PR template checklist and the
   mentor actually looking at the image.
-- **Repository visibility.** Confirmed private as of 2026-09-17. This removed
-  native secret scanning; see the gitleaks section above for what replaced it.
+- **Repository visibility.** This repo is public by design. That is only safe
+  because assessment records live elsewhere and because every intern has
+  consented. Both conditions must hold before anyone is added.
 - **Offboarding.** Removing an intern from the team removes access going
   forward. Anything they cloned is already gone. Decide now whether that is
   acceptable for the FinServe material.

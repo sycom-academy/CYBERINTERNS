@@ -10,8 +10,6 @@
       "parameters": {
         "restricted_file_paths": [
           "00-ADMIN/**",
-          "07-FINAL/Assessment/**",
-          "07-FINAL/Certificates/**",
           ".github/**"
         ]
       }
@@ -26,7 +24,13 @@
       "type": "file_extension_restriction",
       "parameters": {
         "restricted_file_extensions": [
-          ".pem", ".key", ".p12", ".pfx", ".keytab", ".ovpn", ".kdbx"
+          ".pem",
+          ".key",
+          ".p12",
+          ".pfx",
+          ".keytab",
+          ".ovpn",
+          ".kdbx"
         ]
       }
     }

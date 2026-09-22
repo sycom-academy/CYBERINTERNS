@@ -257,7 +257,7 @@ If any of those is wrong, §3 and §4 need revisiting before the pilot.
 | 6 | Injects | **Not started** | Writing; depends on 4, 5 |
 | 7 | Rubric and marking scheme | **Not started** | CISO |
 | 8 | Second mentor | **Not started** | A person |
-| 9 | Intern consent | **Not started** | Four people |
+| 9 | Intern consent | Policy and form written; **forms not issued** | Four people, and a DP sign-off |
 | 10 | Private assessment repo | Scaffold built, not created | GitHub repo creation |
 | 11 | `ciso` write on private repo | Not done | 10 |
 | 12 | Tier C answer key | **Not started** | 10, and 4–6 |

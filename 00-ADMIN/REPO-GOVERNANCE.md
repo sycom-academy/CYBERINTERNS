@@ -52,11 +52,24 @@ repository accordingly. `07-FINAL/` now holds the board pack only.
 
 Making this repo public means every intern's commits, name, GitHub handle and
 work product are permanently world-readable, and forks and mirrors survive any
-later change of mind. Get written consent from each intern **before** they push
-anything, and offer an alternative to anyone who declines — a private fork
-reviewed by a mentor, or working under a pseudonymous account. An intern should
-not have to choose between a training placement and a public record of their
-first attempt at a risk register.
+later change of mind.
+
+This note originally said to get written consent and offer an alternative to
+anyone who declines. That framing was wrong in one respect and it matters:
+it makes publication the norm and declining a deviation. An intern who can see
+that public is the default, and that opting out marks them out, is not refusing
+freely — and consent that is not freely given is not consent.
+
+The policy is now in [`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md)
+and the form in [`Consent-Form.md`](Consent-Form.md). Three participation modes,
+with **pseudonymous as the default**, so appearing under a real name is an
+active opt-in. Assessment, feedback, mentor time and certificate are identical
+in all three.
+
+The other thing that note did not say: **withdrawal cannot be honoured.** Once
+this repository is public, forks and caches are beyond reach, so an intern who
+changes their mind cannot be put back. That limitation is disclosed on the form
+rather than discovered afterwards.
 
 ## Organisation structure
 

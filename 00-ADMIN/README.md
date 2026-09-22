@@ -8,6 +8,9 @@ Programme administration. Mentor-owned; interns read but do not write.
   weightings, and how team and individual marks are arrived at
 - [`MENTOR-ROLE-BRIEF.md`](MENTOR-ROLE-BRIEF.md) — recruiting the second
   mentor: what the role is, the two ways to fill it, time commitment
+- [`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md) — what
+  publication means, the three participation modes, and how consent is taken
+- [`Consent-Form.md`](Consent-Form.md) — the form each intern completes
 - Weekly Schedule (pending)
 - [`REPO-GOVERNANCE.md`](REPO-GOVERNANCE.md) — org structure, rulesets, secret scanning
 - [`PROGRAMME-ARCHITECTURE.md`](PROGRAMME-ARCHITECTURE.md) — how the pilot is

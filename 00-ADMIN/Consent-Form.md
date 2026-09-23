@@ -6,6 +6,10 @@ Read [`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md) before
 completing this. Ask anything you are unsure about before you sign. There is no
 deadline pressure on this decision and no consequence to any answer.
 
+**Return it privately to the programme lead — see Part 6. Do not commit it to
+this repository or open a pull request with it.** This repository is public and
+your answer is nobody else's business, including the other interns'.
+
 ---
 
 ## Part 1 — About you
@@ -81,7 +85,31 @@ Tick each to confirm.
 
 ---
 
-## Part 6 — For the programme lead
+## Part 6 — How to return this
+
+Send the completed form **privately to the programme lead**, by email or any
+private channel you already use with them. A photograph or scan of a printed
+copy is fine. So is a typed version — the words matter, the format does not.
+
+**Do not:**
+
+| Do not | Why |
+|---|---|
+| Commit it to this repository | It is public. Your mode would be readable by anyone, permanently |
+| Open a pull request containing it | Same, and you have no write access yet — nobody does before their form is recorded |
+| Send it to a mentor | Mentors are told which repository you work in and nothing else. Your choice is not theirs to know |
+| Send it in a group email or shared thread | Your answer is individual and private. `CONSENT-AND-PUBLICATION.md` §5.3 |
+
+The programme lead files it in the private assessment repository. You will not
+have access to that repository and are not meant to.
+
+**If you do not return a form**, you are placed in **Mode B — pseudonymous**.
+Nobody will chase you into a different answer, and silence is never read as
+agreement to publish under your real name.
+
+---
+
+## Part 7 — For the programme lead
 
 | | |
 |---|---|
@@ -91,7 +119,9 @@ Tick each to confirm.
 | Pseudonymous account created and handed over *(mode B)* | |
 | Repository access granted | |
 
-Filed in `SYCOM-INTERNSHIP-ASSESSMENT/Consent/`. Never in the public repository.
+Filed in `SYCOM-INTERNSHIP-ASSESSMENT/Consent/`. **Never in the public
+repository**, and never shared with mentors or with other interns — they are
+told which repository or fork a given intern works in, and nothing else.
 
 ---
 

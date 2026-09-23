@@ -15,6 +15,9 @@ Programme administration. Mentor-owned; interns read but do not write.
 - [`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md) — what
   publication means, the three participation modes, and how consent is taken
 - [`Consent-Form.md`](Consent-Form.md) — the form each intern completes
+- [`Consent-Form.pdf`](Consent-Form.pdf) — the same form, printable and
+  signable. Blank copy only: completed forms go privately to
+  hello@sycomsolutions.com, never into this repository
 - [`WEEKLY-SCHEDULE.md`](WEEKLY-SCHEDULE.md) — the four weeks day by day:
   inject releases, deadlines, mentor load, and what must not slip
 - [`COHORT.md`](COHORT.md) — **the only file that changes between intakes.**

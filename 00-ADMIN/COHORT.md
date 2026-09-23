@@ -23,9 +23,22 @@ point it at this file.
 
 | Track | Interns | Team |
 |---|---|---|
-| GRC | 2 | `@sycom-academy/interns-grc` |
-| SOC | 2 | `@sycom-academy/interns-soc` |
-| **Total** | **4** | |
+| GRC | 3 | `@sycom-academy/interns-grc` |
+| SOC | 3 | `@sycom-academy/interns-soc` |
+| **Total** | **6** | |
+
+Six puts this run in the 5–8 band of the sizing guidance below. For this run
+that means:
+
+- **Pairs.** Each track of three works as one pair plus one intern who takes
+  the pair's alternate deliverables and reviews theirs. Rotate who is on their
+  own at each deliverable, so nobody spends all four weeks unpaired
+- **Board pack editor.** Name one before Inject 09 is released. Not yet named
+- **Joint half-day (Inject 01).** Six is the point where it stops working as
+  one session. Split by track, then converge
+- **Mentor ratio.** Three interns per track mentor, within the limit of four
+
+Names and contact details are not recorded here. This repository is public.
 
 ### Mentors
 

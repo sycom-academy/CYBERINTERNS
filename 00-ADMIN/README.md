@@ -5,7 +5,8 @@ Programme administration. Mentor-owned; interns read but do not write.
 - [`INTERN-ONBOARDING.md`](INTERN-ONBOARDING.md) — **start here if you are an
   intern.** Git identity, forking, branches, pull requests, and the one step
   that cannot be undone
-- Mentor Guide (pending)
+- [`MENTOR-GUIDE.md`](MENTOR-GUIDE.md) — how to run it: answering in role,
+  reviewing without solving, and holding answers you must not give away
 - [`ASSESSMENT-RUBRIC.md`](ASSESSMENT-RUBRIC.md) — assessment framework and
   marking scheme. **Read before week 1.** Criteria, four-band scale,
   weightings, and how team and individual marks are arrived at

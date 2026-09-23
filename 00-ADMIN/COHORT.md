@@ -34,7 +34,11 @@ that means:
   one intern who takes the pair's alternate deliverables and reviews theirs.
   Rotate who is on their own at each deliverable, so nobody spends all four
   weeks unpaired
-- **Board pack editor.** Name one before Inject 09 is released. Not yet named
+- **Board pack editors.** Named: a lead editor from GRC, who has the final
+  say on structure, the lead story and cuts, and a deputy from SOC, who owns
+  findings consolidation and the check that every claim traces to a source.
+  Names are in the private roster. Both must be in mode A or B, because the
+  pack's commit history is public
 - **Joint half-day (Inject 01).** Above six it stops working as one session.
   Split by track, then converge
 - **Mentor ratio.** GRC has three interns per track mentor. SOC has four,

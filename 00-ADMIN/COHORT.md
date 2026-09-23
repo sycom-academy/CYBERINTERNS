@@ -24,19 +24,29 @@ point it at this file.
 | Track | Interns | Team |
 |---|---|---|
 | GRC | 3 | `@sycom-academy/interns-grc` |
-| SOC | 3 | `@sycom-academy/interns-soc` |
-| **Total** | **6** | |
+| SOC | 4 | `@sycom-academy/interns-soc` |
+| **Total** | **7** | |
 
-Six puts this run in the 5–8 band of the sizing guidance below. For this run
+Seven puts this run in the 5–8 band of the sizing guidance below. For this run
 that means:
 
-- **Pairs.** Each track of three works as one pair plus one intern who takes
-  the pair's alternate deliverables and reviews theirs. Rotate who is on their
-  own at each deliverable, so nobody spends all four weeks unpaired
-- **Board pack editor.** Name one before Inject 09 is released. Not yet named
-- **Joint half-day (Inject 01).** Six is the point where it stops working as
-  one session. Split by track, then converge
-- **Mentor ratio.** Three interns per track mentor, within the limit of four
+- **Pairs.** SOC works as two pairs. GRC, with three, works as one pair plus
+  one intern who takes the pair's alternate deliverables and reviews theirs.
+  Rotate who is on their own at each deliverable, so nobody spends all four
+  weeks unpaired
+- **Cohort lead and deputy.** Named: a lead from GRC and a deputy from SOC.
+  The lead coordinates work across both tracks, including the rotation of the
+  solo role, and is the mentors' first point of contact. The deputy covers when
+  the lead is unavailable. Names are in the private roster
+- **Board pack editors.** Named: a lead editor from GRC, who has the final
+  say on structure, the lead story and cuts, and a deputy from SOC, who owns
+  findings consolidation and the check that every claim traces to a source.
+  Names are in the private roster. Both must be in mode A or B, because the
+  pack's commit history is public
+- **Joint half-day (Inject 01).** Above six it stops working as one session.
+  Split by track, then converge
+- **Mentor ratio.** GRC has three interns per track mentor. SOC has four,
+  which is at the limit. One more SOC intern needs a second SOC mentor
 
 Names and contact details are not recorded here. This repository is public.
 

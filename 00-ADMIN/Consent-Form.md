@@ -6,7 +6,7 @@ Read [`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md) before
 completing this. Ask anything you are unsure about before you sign. There is no
 deadline pressure on this decision and no consequence to any answer.
 
-Return it privately to the programme lead, see Part 6. Do not commit it to
+Return it privately to hello@sycomsolutions.com, see Part 6. Do not commit it to
 this repository or open a pull request with it. This repository is public and
 your answer is nobody else's business, including the other interns'.
 
@@ -87,8 +87,9 @@ Tick each to confirm.
 
 ## Part 6: How to return this
 
-Send the completed form privately to the programme lead, by email or any
-private channel you already use with them. A photograph or scan of a printed
+Email the completed form to hello@sycomsolutions.com, as your own individual
+email. It reaches Sycom Academy's data protection contact, not a mentor. A
+photograph or scan of a printed
 copy is fine. So is a typed version: the words matter, the format does not.
 
 Do not:
@@ -127,7 +128,8 @@ told which repository or fork a given intern works in, and nothing else.
 
 ## Withdrawing or changing your mind
 
-Contact the programme lead at any time.
+Contact Sycom Academy's data protection contact at hello@sycomsolutions.com at
+any time.
 
 | You want to | Possible? |
 |---|---|

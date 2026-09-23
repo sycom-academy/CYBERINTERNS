@@ -140,11 +140,13 @@ this one.
 
 ## 7. Data subject rights
 
-Interns retain their rights regardless of mode. In practice:
+Interns retain their rights regardless of mode. Every rights request goes to
+Sycom Academy's data protection contact at hello@sycomsolutions.com. In
+practice:
 
 | Right | Position |
 |---|---|
-| Access | Honoured in full. Request to the programme lead |
+| Access | Honoured in full |
 | Rectification | Honoured for the assessment record. A published commit cannot be altered without rewriting history, which does not reach forks |
 | Erasure | Honoured in full for the private assessment record. **For published content, the repository can be made private or deleted, but this does not reach forks, clones, caches or archives.** This limitation is disclosed on the consent form |
 | Objection / withdrawal | Recorded and acted on so far as it is possible to act. See the erasure position above |
@@ -171,7 +173,9 @@ advice rather than assuming this policy transfers.
    covers publication only, and is not a substitute for the notice.
 3. **Retention period for the assessment records themselves** — flagged in the
    private repository's README and still undecided.
-4. **A named contact** for rights requests, to appear on the form.
+4. ~~**A named contact** for rights requests, to appear on the form.~~
+   Resolved: Sycom Academy's data protection contact, hello@sycomsolutions.com,
+   shown in §7 and on the form.
 5. **Mode C and the joint board pack.** Inject 09 makes the board pack a single
    joint deliverable across the whole cohort, and `07-FINAL/Board-Pack/` is
    public. A mode C intern cannot commit to it without appearing in its history.

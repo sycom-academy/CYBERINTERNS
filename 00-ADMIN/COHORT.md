@@ -34,6 +34,10 @@ that means:
   one intern who takes the pair's alternate deliverables and reviews theirs.
   Rotate who is on their own at each deliverable, so nobody spends all four
   weeks unpaired
+- **Track leads.** Named for both tracks, with a deputy for GRC. A track lead
+  coordinates their track's deliverables and the rotation of the solo role,
+  and is the track mentor's first point of contact. Names are in the private
+  roster
 - **Board pack editors.** Named: a lead editor from GRC, who has the final
   say on structure, the lead story and cuts, and a deputy from SOC, who owns
   findings consolidation and the check that every claim traces to a source.

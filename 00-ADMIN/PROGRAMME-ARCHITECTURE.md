@@ -273,7 +273,7 @@ If any of those is wrong, §3 and §4 need revisiting before the pilot.
 | 6 | Injects | **Done** — ten, chained | — |
 | 7 | Rubric and marking scheme | **Done** | — |
 | 8 | ~~Second mentor~~ | **Done** — `mentors` has three | — |
-| 9 | Intern consent | Policy signed off 2026-09-23; forms issued to the cohort; **none returned yet** | The cohort replying |
+| 9 | Intern consent | Policy signed off 2026-09-23; forms issued to the cohort; returns in progress, tracked privately. Completed forms filed in the private `SYCOM-CONSENT-RECORDS` repository | The remaining forms |
 | 10 | Private assessment repo | **Done** — created, CODEOWNERS resolving | — |
 | 11 | `ciso` write on private repo | **Done** — verified via `/codeowners/errors` | — |
 | 12 | Tier C answer key | **Done** — 71 weaknesses, ground truth, inject guidance, board questions | — |

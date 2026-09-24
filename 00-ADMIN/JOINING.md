@@ -65,12 +65,12 @@ starting someone "just on a branch" while the form is chased.
 | 1 | Consent policy signed off by the data protection contact — **once, before any intake** | Programme lead |
 | 2 | Brief them on the three participation modes **before** they commit to the programme | Programme lead |
 | 3 | They complete [`Consent-Form.md`](Consent-Form.md) individually, in writing | Intern |
-| 4 | Form filed in `SYCOM-INTERNSHIP-ASSESSMENT/Consent/`. Mode recorded | Programme lead |
+| 4 | Form filed in the private `SYCOM-CONSENT-RECORDS` repository. Mode recorded there and nowhere mentors can read | Programme lead |
 | 5 | **Mode B:** create the pseudonymous account and hand it over | Programme lead |
 | 6 | Invite to the organisation; add to `interns-grc` or `interns-soc` | Programme lead |
 | 7 | They work through [`INTERN-ONBOARDING.md`](INTERN-ONBOARDING.md) — fork, remotes, **git identity** | Intern |
 | 8 | **Verify their git author name and email before their first PR merges** | A mentor |
-| 9 | Record the verification in `Consent/` | Programme lead |
+| 9 | Record the verification in `SYCOM-CONSENT-RECORDS` | Programme lead |
 
 Step 8 is the one that cannot be fixed afterwards. `user.name` and `user.email`
 are written into every commit object and survive into every fork and clone; a

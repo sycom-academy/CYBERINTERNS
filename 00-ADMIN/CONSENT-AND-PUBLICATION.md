@@ -3,8 +3,8 @@
 Owner: Sycom Academy programme lead. Applies before any intern pushes anything.
 
 > **Not legal advice.** This is a working policy drafted from the UK GDPR and
-> the Data Protection Act 2018. It needs sign-off from whoever holds the data
-> protection role at Sycom Academy before it is used with real interns.
+> the Data Protection Act 2018. It was signed off by Sycom Academy's data
+> protection contact on 2026-09-23.
 >
 > Note that the Data Protection Officer named in the scenario is a fictional
 > character. The controller here is **Sycom Academy**, and the interns are
@@ -80,8 +80,8 @@ In modes A and B:
 - Timestamps, which reveal working patterns
 
 Not published, in any mode: marks, written feedback, moderation notes,
-certificates, the consent record itself. Those are personal data held in the
-private assessment repository and never enter this one.
+certificates, the consent record itself. Those are personal data held in
+private repositories and never enter this one.
 
 ## 4. Git metadata — the part that is easy to get wrong
 
@@ -129,14 +129,17 @@ afterwards.
 ## 6. Where the record lives
 
 Completed forms are personal data about identifiable people. They go in the
-**private** `SYCOM-INTERNSHIP-ASSESSMENT` repository under `Consent/`, never in
-this one.
+**private** `SYCOM-CONSENT-RECORDS` repository, never in this one and never in
+the assessment repository. Mentors have access to the assessment repository;
+they do not have access to the consent records, because the form shows the
+intern's mode and mentors are not told modes (§5.3). The data protection
+contact confirmed this on 2026-09-24.
 
 | | |
 |---|---|
 | Lawful basis for the consent record itself | Legal obligation — Article 7(1) requires the controller to demonstrate consent |
 | Retention | Duration of the programme plus six years |
-| Access | Programme lead and mentors |
+| Access | Programme lead and data protection contact. Not mentors, not interns. Checked before each intake |
 
 ## 7. Data subject rights
 
@@ -148,7 +151,7 @@ practice:
 |---|---|
 | Access | Honoured in full |
 | Rectification | Honoured for the assessment record. A published commit cannot be altered without rewriting history, which does not reach forks |
-| Erasure | Honoured in full for the private assessment record. **For published content, the repository can be made private or deleted, but this does not reach forks, clones, caches or archives.** This limitation is disclosed on the consent form |
+| Erasure | Honoured in full for the private assessment and consent records. **For published content, the repository can be made private or deleted, but this does not reach forks, clones, caches or archives.** This limitation is disclosed on the consent form |
 | Objection / withdrawal | Recorded and acted on so far as it is possible to act. See the erasure position above |
 | Portability | The work is theirs. They may copy it anywhere |
 
@@ -167,7 +170,10 @@ advice rather than assuming this policy transfers.
 
 ## 9. Open items
 
-1. **Sign-off** by Sycom Academy's data protection contact. Not done.
+1. ~~**Sign-off** by Sycom Academy's data protection contact.~~ Resolved:
+   signed off on 2026-09-23 with no changes requested. The Pilot 1 forms had
+   gone out a few hours earlier; they match the signed-off version, so nobody
+   re-signs.
 2. **A privacy notice** under Articles 13 and 14 covering the programme as a
    whole — enrolment, assessment, publication and retention. This document
    covers publication only, and is not a substitute for the notice.

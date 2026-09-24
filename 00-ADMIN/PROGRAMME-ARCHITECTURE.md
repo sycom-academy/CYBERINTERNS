@@ -273,12 +273,12 @@ If any of those is wrong, §3 and §4 need revisiting before the pilot.
 | 6 | Injects | **Done** — ten, chained | — |
 | 7 | Rubric and marking scheme | **Done** | — |
 | 8 | ~~Second mentor~~ | **Done** — `mentors` has three | — |
-| 9 | Intern consent | Policy and form written; **forms not issued** | The cohort replying, and a DP sign-off |
+| 9 | Intern consent | Policy signed off 2026-09-23; forms issued to the cohort; returns in progress, tracked privately. Completed forms filed in the private `SYCOM-CONSENT-RECORDS` repository | The remaining forms |
 | 10 | Private assessment repo | **Done** — created, CODEOWNERS resolving | — |
 | 11 | `ciso` write on private repo | **Done** — verified via `/codeowners/errors` | — |
 | 12 | Tier C answer key | **Done** — 71 weaknesses, ground truth, inject guidance, board questions | — |
 | 13 | Repo made public | **Done** — public, verified anonymously | — |
-| 14 | Rulesets imported | `main-protection-solo` active and verified enforcing. **Swap for `main-protection` now that 8 is done** | — |
+| 14 | Rulesets imported | **Done** — `main-protection` active and enforcing; `main-protection-solo` deleted | — |
 | 15 | `actor_id` in `protected-paths.json` | Not needed — UI import picks the team by name | — |
 | 16 | Custom gitleaks rule for weak passwords | Not done | — |
 

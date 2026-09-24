@@ -101,8 +101,9 @@ Do not:
 | Send it to a mentor | Mentors are told which repository you work in and nothing else. Your choice is not theirs to know |
 | Send it in a group email or shared thread | Your answer is individual and private. `CONSENT-AND-PUBLICATION.md` §5.3 |
 
-The programme lead files it in the private assessment repository. You will not
-have access to that repository and are not meant to.
+The programme lead files it in a private repository that only the programme
+lead and the data protection contact can see. Mentors cannot see it. You will
+not have access to it and are not meant to.
 
 If you do not return a form, you are placed in Mode B: pseudonymous.
 Nobody will chase you into a different answer, and silence is never read as
@@ -120,7 +121,7 @@ agreement to publish under your real name.
 | Pseudonymous account created and handed over *(mode B)* | |
 | Repository access granted | |
 
-Filed in `SYCOM-INTERNSHIP-ASSESSMENT/Consent/`. Never in the public
+Filed in `SYCOM-CONSENT-RECORDS`. Never in the public
 repository, and never shared with mentors or with other interns: they are
 told which repository or fork a given intern works in, and nothing else.
 

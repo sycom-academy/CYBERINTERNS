@@ -182,11 +182,13 @@ advice rather than assuming this policy transfers.
 4. ~~**A named contact** for rights requests, to appear on the form.~~
    Resolved: Sycom Academy's data protection contact, hello@sycomsolutions.com,
    shown in §7 and on the form.
-5. **Mode C and the joint board pack.** Inject 09 makes the board pack a single
-   joint deliverable across the whole cohort, and `07-FINAL/Board-Pack/` is
-   public. A mode C intern cannot commit to it without appearing in its history.
-   The workable answer is that a mentor commits the joint pack on the team's
-   behalf, so the document is published with no per-author attribution — which
-   costs the attributed interns something they may have chosen mode A to get.
-   Decide this before the forms go out, because the answer changes what mode A
-   is worth and therefore what the choice means. It is not decided here.
+5. ~~**Mode C and the joint board pack.**~~ Resolved by the data protection
+   contact on 2026-09-24. Inject 09 makes the board pack a single joint
+   deliverable, and `07-FINAL/Board-Pack/` is public, so a mode C intern
+   cannot commit to it without appearing in its history. The whole cohort
+   drafts the pack in a private repository that every intern and mentor can
+   see, and a mentor commits the final pack to `07-FINAL/Board-Pack/` on the
+   cohort's behalf. Nobody appears as an individual author. Committing only
+   the mode C intern's work through a mentor was rejected, because the history
+   would then point to that one intern. The cost is that mode A interns get no
+   individual commit credit for the pack.

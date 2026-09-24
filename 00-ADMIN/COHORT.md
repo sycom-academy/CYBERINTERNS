@@ -23,30 +23,33 @@ point it at this file.
 
 | Track | Interns | Team |
 |---|---|---|
-| GRC | 3 | `@sycom-academy/interns-grc` |
+| GRC | 4 | `@sycom-academy/interns-grc` |
 | SOC | 4 | `@sycom-academy/interns-soc` |
-| **Total** | **7** | |
+| **Total** | **8** | |
 
-Seven puts this run in the 5–8 band of the sizing guidance below. For this run
-that means:
+Eight puts this run at the top of the 5–8 band of the sizing guidance below.
+One more intern moves it into the 9–12 band, where the answer is two cohorts,
+not a bigger one. For this run that means:
 
-- **Pairs.** SOC works as two pairs. GRC, with three, works as one pair plus
-  one intern who takes the pair's alternate deliverables and reviews theirs.
-  Rotate who is on their own at each deliverable, so nobody spends all four
-  weeks unpaired
+- **Pairs.** Each track works as two pairs. Pairs take alternate deliverables
+  and review each other's before it reaches a mentor. Where an intern's work
+  is in a private repository, their mentor reviews it instead of their partner
 - **Cohort lead and deputy.** Named: a lead from GRC and a deputy from SOC.
-  The lead coordinates work across both tracks, including the rotation of the
-  solo role, and is the mentors' first point of contact. The deputy covers when
+  The lead coordinates work across both tracks and is the mentors' first point
+  of contact. The deputy covers when
   the lead is unavailable. Names are in the private roster
 - **Board pack editors.** Named: a lead editor from GRC, who has the final
   say on structure, the lead story and cuts, and a deputy from SOC, who owns
   findings consolidation and the check that every claim traces to a source.
-  Names are in the private roster. Both must be in mode A or B, because the
-  pack's commit history is public
+  Names are in the private roster. The cohort drafts the pack in a private
+  repository and a mentor commits the final version on the cohort's behalf,
+  so nobody appears as an individual author
+  ([`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md) §9, item 5)
 - **Joint half-day (Inject 01).** Above six it stops working as one session.
   Split by track, then converge
-- **Mentor ratio.** GRC has three interns per track mentor. SOC has four,
-  which is at the limit. One more SOC intern needs a second SOC mentor
+- **Mentor ratio.** Both tracks have four interns per track mentor, which is
+  at the limit. One more intern on either track needs a second mentor on that
+  track
 
 Names and contact details are not recorded here. This repository is public.
 

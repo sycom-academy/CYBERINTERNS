@@ -41,8 +41,10 @@ not a bigger one. For this run that means:
 - **Board pack editors.** Named: a lead editor from GRC, who has the final
   say on structure, the lead story and cuts, and a deputy from SOC, who owns
   findings consolidation and the check that every claim traces to a source.
-  Names are in the private roster. Both must be in mode A or B, because the
-  pack's commit history is public
+  Names are in the private roster. The cohort drafts the pack in a private
+  repository and a mentor commits the final version on the cohort's behalf,
+  so nobody appears as an individual author
+  ([`CONSENT-AND-PUBLICATION.md`](CONSENT-AND-PUBLICATION.md) §9, item 5)
 - **Joint half-day (Inject 01).** Above six it stops working as one session.
   Split by track, then converge
 - **Mentor ratio.** Both tracks have four interns per track mentor, which is

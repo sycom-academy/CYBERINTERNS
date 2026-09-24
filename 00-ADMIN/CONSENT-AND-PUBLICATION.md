@@ -80,8 +80,8 @@ In modes A and B:
 - Timestamps, which reveal working patterns
 
 Not published, in any mode: marks, written feedback, moderation notes,
-certificates, the consent record itself. Those are personal data held in the
-private assessment repository and never enter this one.
+certificates, the consent record itself. Those are personal data held in
+private repositories and never enter this one.
 
 ## 4. Git metadata — the part that is easy to get wrong
 
@@ -129,14 +129,17 @@ afterwards.
 ## 6. Where the record lives
 
 Completed forms are personal data about identifiable people. They go in the
-**private** `SYCOM-INTERNSHIP-ASSESSMENT` repository under `Consent/`, never in
-this one.
+**private** `SYCOM-CONSENT-RECORDS` repository, never in this one and never in
+the assessment repository. Mentors have access to the assessment repository;
+they do not have access to the consent records, because the form shows the
+intern's mode and mentors are not told modes (§5.3). The data protection
+contact confirmed this on 2026-09-24.
 
 | | |
 |---|---|
 | Lawful basis for the consent record itself | Legal obligation — Article 7(1) requires the controller to demonstrate consent |
 | Retention | Duration of the programme plus six years |
-| Access | Programme lead and mentors |
+| Access | Programme lead and data protection contact. Not mentors, not interns. Checked before each intake |
 
 ## 7. Data subject rights
 
@@ -148,7 +151,7 @@ practice:
 |---|---|
 | Access | Honoured in full |
 | Rectification | Honoured for the assessment record. A published commit cannot be altered without rewriting history, which does not reach forks |
-| Erasure | Honoured in full for the private assessment record. **For published content, the repository can be made private or deleted, but this does not reach forks, clones, caches or archives.** This limitation is disclosed on the consent form |
+| Erasure | Honoured in full for the private assessment and consent records. **For published content, the repository can be made private or deleted, but this does not reach forks, clones, caches or archives.** This limitation is disclosed on the consent form |
 | Objection / withdrawal | Recorded and acted on so far as it is possible to act. See the erasure position above |
 | Portability | The work is theirs. They may copy it anywhere |
 

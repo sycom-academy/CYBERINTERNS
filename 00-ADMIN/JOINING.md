@@ -30,6 +30,14 @@ The intern teams still exist even though they grant nothing on either
 repository. They are how you know who is in the cohort, and they are what gets
 emptied at offboarding.
 
+**The one exception is the board pack drafting repository**, a private
+repository created before week 4 (for Pilot 1, `pilot1-board-pack`).
+`interns-grc` and `interns-soc` get **Write** there and `mentors` get
+**Maintain**; nobody else has access. Every intern gets the same access, so it
+reveals nothing about anyone's participation mode. Its content reaches this
+repository only by a mentor copying the final files. See
+[`07-FINAL/README.md`](../07-FINAL/README.md).
+
 ## 2. Adding a mentor
 
 Approved by the CISO. A mentor sees the scenario key and every intern's
@@ -129,11 +137,17 @@ cohort.
 |---|---|
 | 1 | Empty `interns-grc` and `interns-soc` |
 | 2 | Empty `observers` |
-| 3 | Leave `mentors` and `ciso` as they are |
-| 4 | Fill in the "After each run" table in [`COHORT.md`](COHORT.md) |
-| 5 | Record in `Moderation/` that the cohort is closed and marks are final |
+| 3 | Once the board pack is published, remove `interns-grc` and `interns-soc` from the board pack drafting repository and archive it. Its history names every contributor, so it stays private and is kept or deleted with the assessment records |
+| 4 | Leave `mentors` and `ciso` as they are |
+| 5 | Fill in the "After each run" table in [`COHORT.md`](COHORT.md) |
+| 6 | Record in `Moderation/` that the cohort is closed and marks are final |
 
 ## 6. What is never granted
+
+- **Anyone: a route from the board pack drafting repository into
+  `CYBERINTERNS` other than copying files.** No merge, push, remote, import,
+  fork, transfer or visibility change. Any of them publishes every
+  contributor's name. See [`07-FINAL/README.md`](../07-FINAL/README.md).
 
 - **Interns: write access to `CYBERINTERNS`.** The fork model depends on this.
   Granting it does not break anything immediately, which is what makes it

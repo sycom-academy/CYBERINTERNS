@@ -105,6 +105,12 @@ audit trail this repo exists to produce is worth less.
 Interns are added to their team, never as direct collaborators. Direct
 collaborators bypass team structure and are easy to forget at offboarding.
 
+The intern teams' **None** is on this repository. They do have **Write** on
+one private repository: the board pack drafting repository (for Pilot 1,
+`pilot1-board-pack`). Its content reaches this repository only by a mentor
+copying the final files, never by merging its history. See
+[`07-FINAL/README.md`](../07-FINAL/README.md).
+
 ## Branch model
 
 - `main` — protected. Only reachable by PR.

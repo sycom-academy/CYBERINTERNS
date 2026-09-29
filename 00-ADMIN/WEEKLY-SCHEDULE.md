@@ -23,24 +23,34 @@ lands at 16:30 on a Wednesday so its clock runs through it.
 
 ## 2. Dates
 
-Two options. **Monday 12 October is recommended.**
+**Pilot 1 runs on Option A, with a two-day induction before it.** Decided by
+the programme lead on 2026-09-29.
 
-| | Option A | Option B *(recommended)* |
+| | Dates |
+|---|---|
+| Induction | **Thu 01 – Fri 02 Oct**, online |
+| Week 1 | **Mon 05 – Fri 09 Oct** |
+| Week 2 | Mon 12 – Fri 16 Oct |
+| Week 3 | Mon 19 – Fri 23 Oct |
+| Week 4 | Mon 26 – Fri 30 Oct |
+| Board session | **Thu 29 Oct, 14:00** |
+
+The induction is not D1 and releases no inject. D1 stays a Monday for the
+reasons in §1. The two days are for the steps that must be finished before any
+real work: every intern sets their GitHub profile name and git identity, forks
+(or, in mode C, clones their private repository), and opens a first pull
+request, so that a mentor can check their commit identity before anything
+assessed is pushed.
+
+The option not taken, for the record:
+
+| | Option A *(taken)* | Option B |
 |---|---|---|
-| Week 1 | Mon 05 – Fri 09 Oct | **Mon 12 – Fri 16 Oct** |
-| Week 2 | Mon 12 – Fri 16 Oct | **Mon 19 – Fri 23 Oct** |
-| Week 3 | Mon 19 – Fri 23 Oct | **Mon 26 – Fri 30 Oct** |
-| Week 4 | Mon 26 – Fri 30 Oct | **Mon 02 – Fri 06 Nov** |
-| Board session | Thu 29 Oct, 14:00 | **Thu 05 Nov, 14:00** |
+| Week 1 | Mon 05 – Fri 09 Oct | Mon 12 – Fri 16 Oct |
+| Board session | Thu 29 Oct, 14:00 | Thu 05 Nov, 14:00 |
 
-Option A is the nearest Monday to "two weeks". It leaves the consent chain —
-data protection sign-off, forms issued, every intern replying, accounts and
-access set up — with effectively **no slack**, and that chain runs through the
-whole cohort in series. It gets longer as the cohort gets larger. If sign-off takes a week, forms reach interns after the
-pilot has begun, and nobody may push anything until their form is recorded.
-
-Option B costs a week and buys the whole chain a week of float. Take it unless
-the date is fixed by something outside this programme.
+Option B would have bought a week of float for the consent chain. It was not
+needed: every consent form was returned and filed by 25 September.
 
 Dates appear only in this section. Shifting the pilot is a change here and
 nowhere else.

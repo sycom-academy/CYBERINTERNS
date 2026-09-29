@@ -85,9 +85,14 @@ are written into every commit object and survive into every fork and clone; a
 pseudonymous account is worth nothing if the commits carry a real name. Check
 it, do not ask whether they did it.
 
-The `commit-identity` check does the email half on every pull request from a
-fork: it fails if any commit carries an email that is not a GitHub noreply
-address. The name half needs a person: the check's summary lists every author
+The `commit-identity` check does the email half on every pull request, from
+a fork or from a branch of this repository: it fails if any commit carries an
+email that is neither a GitHub noreply address nor one of the programme's own
+public addresses. Mentors are covered too, because an "Update branch" click
+creates a commit under the mentor's account email, which the squash merge then
+copies onto `main` as a `Co-authored-by` line. Every mentor turns on **Keep my
+email addresses private** at https://github.com/settings/emails before they
+touch a pull request. The name half needs a person: the check's summary lists every author
 name, and the reviewing mentor confirms it is the name the intern chose to make
 public (mode A) or their pseudonym (mode B). Do not merge a first pull request
 until both halves pass. Also check the intern's **GitHub profile name**: pull

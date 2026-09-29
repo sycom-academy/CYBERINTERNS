@@ -1,17 +1,24 @@
 name: commit-identity
 
-# JOINING.md §3 step 8: an intern's git author name and email must be checked
-# before their first pull request merges, because both are written into every
-# commit and cannot be removed once published. This job does the email half
-# mechanically on every pull request from a fork: every commit's author (and
-# committer) email must be a GitHub noreply address.
+# Every commit that reaches main is public forever, and so is every email
+# address in it: pull requests are squash-merged, and GitHub copies the author
+# of every commit on the branch into the squash commit as a Co-authored-by
+# line. This job checks every commit on every pull request, from a fork or
+# from a branch of this repository, before that can happen.
 #
-# The name half needs a person. The job lists every author name in its summary
-# so the reviewing mentor can confirm it is the name the intern chose to make
-# public (mode A) or their pseudonym (mode B).
+# A commit passes when its author and committer emails are each either a
+# GitHub noreply address or one of the programme's own public addresses in
+# ALLOWED_EMAILS. Anything else, such as a personal or university address, fails.
 #
-# Pull requests from branches of this repository (mentors, the programme lead)
-# are skipped: interns cannot push branches here.
+# That covers mentors too. A mentor's "Update branch" click on a pull request
+# creates a commit under their GitHub account email, which then lands on main
+# as a Co-authored-by line. Mentors turn on "Keep my email addresses private"
+# (https://github.com/settings/emails) so that those commits use their noreply
+# address.
+#
+# JOINING.md §3 step 8 needs a person for the other half: the job lists every
+# author name in its summary so the reviewing mentor can confirm it is the
+# name the intern chose to make public (mode A) or their pseudonym (mode B).
 
 on:
   pull_request:
@@ -31,13 +38,20 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
-          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          # Programme addresses that are already public. Space-separated.
+          ALLOWED_EMAILS: "hello@sycomsolutions.com noreply@anthropic.com"
         run: |
           set -euo pipefail
-          if [ "$HEAD_REPO" = "$GITHUB_REPOSITORY" ]; then
-            echo "Pull request from a branch of this repository; not an intern fork. Skipping."
-            exit 0
-          fi
+
+          allowed() {
+            case "$1" in
+              *@users.noreply.github.com|noreply@github.com) return 0 ;;
+            esac
+            for a in $ALLOWED_EMAILS; do
+              [ "$1" = "$a" ] && return 0
+            done
+            return 1
+          }
 
           gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${PR}/commits" \
             --jq '.[] | [.sha[0:7], .commit.author.name, .commit.author.email, .commit.committer.email] | @tsv' \
@@ -46,7 +60,7 @@ jobs:
           {
             echo "### Commit identities on this pull request"
             echo
-            echo "Check that each **author name** is the name this intern chose to make public."
+            echo "Check that each **author name** is the name its author chose to make public."
             echo
             echo "| Commit | Author name | Author email | Committer email | OK |"
             echo "|---|---|---|---|---|"
@@ -55,11 +69,11 @@ jobs:
           bad=0
           while IFS=$'\t' read -r sha name email cemail; do
             ok=yes
-            case "$email" in *@users.noreply.github.com) ;; *) ok=no ;; esac
-            case "$cemail" in *@users.noreply.github.com|noreply@github.com) ;; *) ok=no ;; esac
+            allowed "$email" || ok=no
+            allowed "$cemail" || ok=no
             if [ "$ok" = no ]; then
               bad=$((bad + 1))
-              echo "::error::Commit ${sha} uses a non-noreply email (author ${email}, committer ${cemail}). See INTERN-ONBOARDING.md §1."
+              echo "::error::Commit ${sha} uses an email that is not a noreply or programme address (author ${email}, committer ${cemail})."
             fi
             echo "| \`${sha}\` | ${name} | ${email} | ${cemail} | ${ok} |" >> "$GITHUB_STEP_SUMMARY"
           done < commits.tsv
@@ -67,10 +81,11 @@ jobs:
           if [ "$bad" -gt 0 ]; then
             {
               echo
-              echo "**${bad} commit(s) would publish a personal email address.** Do not merge."
-              echo "The fix is a fresh branch with corrected commits (INTERN-ONBOARDING.md §1); this"
-              echo "fork is public, so tell the programme lead as well."
+              echo "**${bad} commit(s) would publish a personal email address on main.** Do not merge."
+              echo "Interns: start a fresh branch with corrected commits (INTERN-ONBOARDING.md §1)."
+              echo "Mentors: turn on \"Keep my email addresses private\" at https://github.com/settings/emails,"
+              echo "then replace the offending commit (for a merge from main, reset the branch and update it again)."
             } >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
-          echo "All commit emails are GitHub noreply addresses."
+          echo "All commit emails are noreply or programme addresses."

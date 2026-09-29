@@ -1,0 +1,76 @@
+name: commit-identity
+
+# JOINING.md §3 step 8: an intern's git author name and email must be checked
+# before their first pull request merges, because both are written into every
+# commit and cannot be removed once published. This job does the email half
+# mechanically on every pull request from a fork: every commit's author (and
+# committer) email must be a GitHub noreply address.
+#
+# The name half needs a person. The job lists every author name in its summary
+# so the reviewing mentor can confirm it is the name the intern chose to make
+# public (mode A) or their pseudonym (mode B).
+#
+# Pull requests from branches of this repository (mentors, the programme lead)
+# are skipped: interns cannot push branches here.
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check:
+    name: commit-identity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check commit author and committer emails
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+        run: |
+          set -euo pipefail
+          if [ "$HEAD_REPO" = "$GITHUB_REPOSITORY" ]; then
+            echo "Pull request from a branch of this repository; not an intern fork. Skipping."
+            exit 0
+          fi
+
+          gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${PR}/commits" \
+            --jq '.[] | [.sha[0:7], .commit.author.name, .commit.author.email, .commit.committer.email] | @tsv' \
+            > commits.tsv
+
+          {
+            echo "### Commit identities on this pull request"
+            echo
+            echo "Check that each **author name** is the name this intern chose to make public."
+            echo
+            echo "| Commit | Author name | Author email | Committer email | OK |"
+            echo "|---|---|---|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          bad=0
+          while IFS=$'\t' read -r sha name email cemail; do
+            ok=yes
+            case "$email" in *@users.noreply.github.com) ;; *) ok=no ;; esac
+            case "$cemail" in *@users.noreply.github.com|noreply@github.com) ;; *) ok=no ;; esac
+            if [ "$ok" = no ]; then
+              bad=$((bad + 1))
+              echo "::error::Commit ${sha} uses a non-noreply email (author ${email}, committer ${cemail}). See INTERN-ONBOARDING.md §1."
+            fi
+            echo "| \`${sha}\` | ${name} | ${email} | ${cemail} | ${ok} |" >> "$GITHUB_STEP_SUMMARY"
+          done < commits.tsv
+
+          if [ "$bad" -gt 0 ]; then
+            {
+              echo
+              echo "**${bad} commit(s) would publish a personal email address.** Do not merge."
+              echo "The fix is a fresh branch with corrected commits (INTERN-ONBOARDING.md §1); this"
+              echo "fork is public, so tell the programme lead as well."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          echo "All commit emails are GitHub noreply addresses."

@@ -66,9 +66,16 @@ git config --global user.email
 **Mode A** — use the name you are happy to have public forever.
 **Mode B** — use your pseudonym, not your real name.
 
-A mentor verifies this before your first pull request is merged. If it is
-wrong, the fix is to start a fresh branch with corrected commits — the old
-commits cannot be cleaned up once they are anywhere else.
+Your **GitHub profile name** is public too. Pull requests here are
+squash-merged, and the commit that lands on `main` is credited to your GitHub
+account and the name on your profile (**https://github.com/settings/profile**),
+not to your local `user.name`. Set it to the same name.
+
+A mentor verifies this before your first pull request is merged, and an
+automatic check on every pull request fails if any of your commits carries an
+email that is not your noreply address. If it is wrong, the fix is to start a
+fresh branch with corrected commits — the old commits cannot be cleaned up once
+they are anywhere else.
 
 ---
 

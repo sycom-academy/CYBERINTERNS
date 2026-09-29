@@ -85,6 +85,15 @@ are written into every commit object and survive into every fork and clone; a
 pseudonymous account is worth nothing if the commits carry a real name. Check
 it, do not ask whether they did it.
 
+The `commit-identity` check does the email half on every pull request from a
+fork: it fails if any commit carries an email that is not a GitHub noreply
+address. The name half needs a person: the check's summary lists every author
+name, and the reviewing mentor confirms it is the name the intern chose to make
+public (mode A) or their pseudonym (mode B). Do not merge a first pull request
+until both halves pass. Also check the intern's **GitHub profile name**: pull
+requests are squash-merged, and the commit that lands on `main` is credited to
+the intern's GitHub account and profile name, not to their local `user.name`.
+
 An intern who returns no form is in **Mode B**. Silence is never read as
 consent to publication under a real name.
 

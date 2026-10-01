@@ -39,13 +39,19 @@ There is no separate induction session. 1 October is a public holiday in
 Nigeria and the two induction days it sat across were dropped; the setup they
 existed for is self-paced instead, which is what it always was in practice.
 
-Every intern works through `INTERN-ONBOARDING.md` before **Mon 05 Oct 11:00**:
-set the GitHub profile name and git identity, fork (or, in mode C, clone the
-private repository), and open a first pull request. `commit-identity.yml`
-checks the email half of that automatically on every pull request; a mentor
-confirms the author name before the first merge, per §3. That gate is on the
-first *merge*, not on D1, so an intern who is late can still start Monday —
-they simply cannot land anything until it passes.
+Before **Mon 05 Oct 11:00** every intern reads `INTERN-ONBOARDING.md`, sets
+their GitHub profile name, and sets their git identity to that name and their
+GitHub noreply address. Those three are self-paced and need nobody else online.
+
+Forking and the first pull request happen **after** the welcome session, not
+before it, because the mentor tells each intern there what their first pull
+request should contain. The welcome email of 29 September put that instruction
+on the induction call; dropping the induction moved it here.
+
+`commit-identity.yml` checks the email half of the identity automatically on
+every pull request; a mentor confirms the author name before the first merge,
+per §3. That gate is on the first *merge*, not on D1, so an intern who is late
+can still start Monday — they simply cannot land anything until it passes.
 
 D1 opens with a 30-minute welcome at 11:00 and Inject 01 releases at 11:30.
 D1 stays a Monday for the reasons in §1.

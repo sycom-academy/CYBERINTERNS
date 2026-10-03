@@ -6,6 +6,10 @@ through and one step in it cannot be undone afterwards.
 If you have never used git beyond `clone` and `commit`, that is fine and
 expected. Follow it literally.
 
+**Prefer not to use the command line?** [`BROWSER-WORKFLOW.md`](BROWSER-WORKFLOW.md)
+is the same workflow on one page, done entirely on github.com. §1's settings
+(email privacy and profile name) still apply to you, and the guide repeats them.
+
 ---
 
 ## 0. Before you start
@@ -176,14 +180,15 @@ where you say what you were unsure about. Saying *"I could not decide whether
 to treat this as a risk or an issue"* scores better than pretending you were
 certain.
 
-### Two automatic checks run
+### Three automatic checks run
 
 | Check | What it does |
 |---|---|
 | `gitleaks` | Scans for credentials in your files and in the history |
 | `codeowners` | Validates the repository's own CODEOWNERS file |
+| `commit-identity` | Fails if any commit on the PR uses an email that is not a noreply address (§1) |
 
-Both must pass before anything can merge. If `gitleaks` fails on your PR, read
+All three must pass before anything can merge. If `gitleaks` fails on your PR, read
 the annotation — it will point at a line. **Do not try to silence it.** There
 is a marker in this repository that suppresses the scanner; it is for mentors
 writing scenario material, and an intern using it on their own work is itself

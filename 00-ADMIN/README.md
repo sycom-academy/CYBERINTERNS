@@ -5,6 +5,9 @@ Programme administration. Mentor-owned; interns read but do not write.
 - [`INTERN-ONBOARDING.md`](INTERN-ONBOARDING.md) — **start here if you are an
   intern.** Git identity, forking, branches, pull requests, and the one step
   that cannot be undone
+- [`BROWSER-WORKFLOW.md`](BROWSER-WORKFLOW.md) — the same workflow on one
+  page, done entirely on github.com, for interns who prefer not to use the
+  command line
 - [`MENTOR-GUIDE.md`](MENTOR-GUIDE.md) — how to run it: answering in role,
   reviewing without solving, and holding answers you must not give away
 - [`ASSESSMENT-RUBRIC.md`](ASSESSMENT-RUBRIC.md) — assessment framework and

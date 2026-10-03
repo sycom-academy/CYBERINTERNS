@@ -28,19 +28,33 @@ the programme lead on 2026-09-29.
 
 | | Dates |
 |---|---|
-| Induction | **Thu 01 – Fri 02 Oct**, online |
+| Induction | **Asynchronous**, self-paced, complete before Mon 05 Oct 11:00 |
 | Week 1 | **Mon 05 – Fri 09 Oct** |
 | Week 2 | Mon 12 – Fri 16 Oct |
 | Week 3 | Mon 19 – Fri 23 Oct |
 | Week 4 | Mon 26 – Fri 30 Oct |
 | Board session | **Thu 29 Oct, 14:00** |
 
-The induction is not D1 and releases no inject. D1 stays a Monday for the
-reasons in §1. The two days are for the steps that must be finished before any
-real work: every intern sets their GitHub profile name and git identity, forks
-(or, in mode C, clones their private repository), and opens a first pull
-request, so that a mentor can check their commit identity before anything
-assessed is pushed.
+There is no separate induction session. 1 October is a public holiday in
+Nigeria and the two induction days it sat across were dropped; the setup they
+existed for is self-paced instead, which is what it always was in practice.
+
+Before **Mon 05 Oct 11:00** every intern reads `INTERN-ONBOARDING.md`, sets
+their GitHub profile name, and sets their git identity to that name and their
+GitHub noreply address. Those three are self-paced and need nobody else online.
+
+Forking and the first pull request happen **after** the welcome session, not
+before it, because the mentor tells each intern there what their first pull
+request should contain. The welcome email of 29 September put that instruction
+on the induction call; dropping the induction moved it here.
+
+`commit-identity.yml` checks the email half of the identity automatically on
+every pull request; a mentor confirms the author name before the first merge,
+per §3. That gate is on the first *merge*, not on D1, so an intern who is late
+can still start Monday — they simply cannot land anything until it passes.
+
+D1 opens with a 30-minute welcome at 11:00 and Inject 01 releases at 11:30.
+D1 stays a Monday for the reasons in §1.
 
 The option not taken, for the record:
 
@@ -84,8 +98,9 @@ teams need in week 3, and a team treating it as busywork will feel it.
 
 | Day | Time | Event |
 |---|---|---|
-| **D1 Mon** | 09:00 | **Inject 01** — engagement letter · both teams |
-| | | Joint half-day. The only session where all four work as one group |
+| **D1 Mon** | 11:00 | **Welcome**, 30 min. Roles, the client, how the mentor answers in role |
+| | 11:30 | **Inject 01** — engagement letter · both teams |
+| | | Joint half-day. The only session where all eight work as one group |
 | **D2 Tue** | — | **Due: engagement plan** → `06-DELIVERABLES/Engagement-Plan.md` |
 | | 09:00 | **Inject 02** — audit handover · GRC |
 | | 09:00 | **Inject 03** — SIEM health review · SOC |

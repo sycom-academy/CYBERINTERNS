@@ -16,7 +16,7 @@ point it at this file.
 | Cohort | Pilot 1 |
 | Scenario | Scenario 1 — FinServe Digital Bank Ltd |
 | Length | 4 weeks |
-| Week 1, Day 1 | Mon 05 Oct, after an online induction on Thu 01 – Fri 02 Oct. See [`WEEKLY-SCHEDULE.md`](WEEKLY-SCHEDULE.md) §2 |
+| Week 1, Day 1 | Mon 05 Oct. Dates and the onboarding deadline are in [`WEEKLY-SCHEDULE.md`](WEEKLY-SCHEDULE.md) §2 and nowhere else |
 | Board session | W4 D4, 14:00 |
 
 ### Tracks

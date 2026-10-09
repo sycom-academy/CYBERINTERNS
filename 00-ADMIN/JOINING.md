@@ -9,7 +9,7 @@ Cohort size and the current allocation are in [`COHORT.md`](COHORT.md).
 
 ## 1. Teams and what each one gets
 
-Five teams. Nobody is ever added to a repository as a direct collaborator —
+Six teams. Nobody is ever added to a repository as a direct collaborator —
 always through a team, because direct collaborators bypass the structure and
 are the thing everybody forgets at offboarding.
 
@@ -19,6 +19,7 @@ are the thing everybody forgets at offboarding.
 | `mentors` | Write | Write | **Yes** |
 | `interns-grc` | **None** — fork and PR | None | No |
 | `interns-soc` | **None** — fork and PR | None | No |
+| `coordinators` | Triage | None | No |
 | `observers` | Read | None | No |
 
 Intern teams hold **no write access** to the public repository. They fork it
@@ -118,6 +119,26 @@ Observers get **no** access to the private repository, and never to the
 scenario key. A board-session participant who has read the answers is not
 playing the role the session needs.
 
+## 4a. Adding a project coordinator
+
+A coordinator keeps the programme on schedule: chases deliverables, follows
+up with interns and mentors, and keeps the run sheet current. They never
+review, approve, merge or mark.
+
+| # | Step | Done by |
+|---|---|---|
+| 1 | Invite to the organisation; **confirm they accepted** | Programme lead |
+| 2 | Add to `@sycom-academy/coordinators`, which holds **Triage** on `CYBERINTERNS`: they can label, assign and request reviewers on pull requests, but cannot approve as a code owner or merge | Programme lead |
+| 3 | Grant `coordinators` **Read** on the board pack drafting repository and on any private intern repository, so they can see work that is not in public pull requests | Programme lead |
+| 4 | They turn on **Keep my email addresses private** at https://github.com/settings/emails, as mentors do, before clicking anything that could create a commit | Coordinator |
+| 5 | Tell the data protection contact a new person is handling intern details | Programme lead |
+
+Never add a coordinator to `mentors`: that team is the code owner, so any
+member's approval satisfies the required review. No access to
+`SYCOM-INTERNSHIP-ASSESSMENT`, the consent records or the scenario key. If an
+intern works in a private repository, the coordinator is told which one, never
+why, the same as a mentor.
+
 ## 5. Leaving
 
 Offboarding is where access models rot. Do it on the day, not at the end of the
@@ -150,7 +171,7 @@ cohort.
 | # | Step |
 |---|---|
 | 1 | Empty `interns-grc` and `interns-soc` |
-| 2 | Empty `observers` |
+| 2 | Empty `observers` and `coordinators` |
 | 3 | Once the board pack is published, remove `interns-grc` and `interns-soc` from the board pack drafting repository and archive it. Its history names every contributor, so it stays private and is kept or deleted with the assessment records |
 | 4 | Leave `mentors` and `ciso` as they are |
 | 5 | Fill in the "After each run" table in [`COHORT.md`](COHORT.md) |

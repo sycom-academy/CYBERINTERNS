@@ -9,9 +9,12 @@ Cohort size and the current allocation are in [`COHORT.md`](COHORT.md).
 
 ## 1. Teams and what each one gets
 
-Five teams. Nobody is ever added to a repository as a direct collaborator —
-always through a team, because direct collaborators bypass the structure and
-are the thing everybody forgets at offboarding.
+The teams below are the only way access is granted. Nobody is ever added to a
+repository as a direct collaborator — direct collaborators bypass the
+structure and are the thing everybody forgets at offboarding.
+
+No count is given here on purpose. A count in prose goes stale the moment a
+team is added and tells you nothing a reader cannot get from the table.
 
 | Team | `CYBERINTERNS` (public) | `SYCOM-INTERNSHIP-ASSESSMENT` (private) | Tier C scenario key |
 |---|---|---|---|
@@ -19,7 +22,30 @@ are the thing everybody forgets at offboarding.
 | `mentors` | Write | Write | **Yes** |
 | `interns-grc` | **None** — fork and PR | None | No |
 | `interns-soc` | **None** — fork and PR | None | No |
+| `coordinators` | Triage | None | No |
 | `observers` | Read | None | No |
+| `grc-private-<n>` / `soc-private-<n>` | None | None | No |
+
+**`observers` is created before week 4**, not at intake, and emptied at the
+end of the cohort. If you are reading this mid-run and the team does not
+exist, that is expected.
+
+### Per-intern private teams (mode C)
+
+An intern in mode C works in a private repository of their own rather than in
+a fork. Each such repository has its own team, named for the track and
+numbered — `grc-private-1`, `grc-private-2` and so on — holding **Write** on
+that one repository and nothing else. Members: the intern and their track
+mentor.
+
+These teams are **Secret**. A visible team would tell the rest of the cohort
+who is in mode C, which is the one thing a participation mode must not leak.
+That is also why they are numbered rather than named after the intern.
+
+They grant nothing on `CYBERINTERNS` or on the assessment repository, so they
+do not appear in `CODEOWNERS` and the §7 check does not see them. They still
+have to be emptied and archived at offboarding like any other access, which is
+§5.
 
 Intern teams hold **no write access** to the public repository. They fork it
 and open pull requests. That is what prevents an intern merging their own
@@ -76,6 +102,7 @@ starting someone "just on a branch" while the form is chased.
 | 4 | Form filed in the private `SYCOM-CONSENT-RECORDS` repository. Mode recorded there and nowhere mentors can read | Programme lead |
 | 5 | **Mode B:** create the pseudonymous account and hand it over | Programme lead |
 | 6 | Invite to the organisation; add to `interns-grc` or `interns-soc` | Programme lead |
+| 6a | **Mode C only:** create their private repository and a Secret team `<track>-private-<n>` holding Write on it; add the intern and their track mentor, and nobody else | Programme lead |
 | 7 | They work through [`INTERN-ONBOARDING.md`](INTERN-ONBOARDING.md) — fork, remotes, **git identity** | Intern |
 | 8 | **Verify their git author name and email before their first PR merges** | A mentor |
 | 9 | Record the verification in `SYCOM-CONSENT-RECORDS` | Programme lead |
@@ -118,6 +145,26 @@ Observers get **no** access to the private repository, and never to the
 scenario key. A board-session participant who has read the answers is not
 playing the role the session needs.
 
+## 4a. Adding a project coordinator
+
+A coordinator keeps the programme on schedule: chases deliverables, follows
+up with interns and mentors, and keeps the run sheet current. They never
+review, approve, merge or mark.
+
+| # | Step | Done by |
+|---|---|---|
+| 1 | Invite to the organisation; **confirm they accepted** | Programme lead |
+| 2 | Add to `@sycom-academy/coordinators`, which holds **Triage** on `CYBERINTERNS`: they can label, assign and request reviewers on pull requests, but cannot approve as a code owner or merge | Programme lead |
+| 3 | Grant `coordinators` **Read** on the board pack drafting repository and on any private intern repository, so they can see work that is not in public pull requests | Programme lead |
+| 4 | They turn on **Keep my email addresses private** at https://github.com/settings/emails, as mentors do, before clicking anything that could create a commit | Coordinator |
+| 5 | Tell the data protection contact a new person is handling intern details | Programme lead |
+
+Never add a coordinator to `mentors`: that team is the code owner, so any
+member's approval satisfies the required review. No access to
+`SYCOM-INTERNSHIP-ASSESSMENT`, the consent records or the scenario key. If an
+intern works in a private repository, the coordinator is told which one, never
+why, the same as a mentor.
+
 ## 5. Leaving
 
 Offboarding is where access models rot. Do it on the day, not at the end of the
@@ -128,6 +175,7 @@ cohort.
 | # | Step |
 |---|---|
 | 1 | Remove from `interns-grc` / `interns-soc` |
+| 1a | **Mode C:** remove them from their `<track>-private-<n>` team. Archive the repository rather than deleting it; it holds assessed work |
 | 2 | Remove from the organisation if they are in no other team |
 | 3 | Their **fork stays theirs.** It is their work and they may keep it |
 | 4 | Their merged work stays in `main`. It is published and cannot be withdrawn — this was disclosed on the consent form |
@@ -150,7 +198,8 @@ cohort.
 | # | Step |
 |---|---|
 | 1 | Empty `interns-grc` and `interns-soc` |
-| 2 | Empty `observers` |
+| 2 | Empty `observers` and `coordinators` |
+| 2a | Empty and archive every `<track>-private-<n>` team and repository. These are Secret, so they do not appear in a casual look at the teams page and are the easiest access in the programme to leave behind |
 | 3 | Once the board pack is published, remove `interns-grc` and `interns-soc` from the board pack drafting repository and archive it. Its history names every contributor, so it stays private and is kept or deleted with the assessment records |
 | 4 | Leave `mentors` and `ciso` as they are |
 | 5 | Fill in the "After each run" table in [`COHORT.md`](COHORT.md) |
@@ -187,3 +236,25 @@ done
 `0` on both means every team named in `CODEOWNERS` exists, is visible, and
 holds write access. Anything else means the review model is not enforcing what
 the documents say it does, and it will fail silently rather than loudly.
+
+### The check above is not sufficient on its own
+
+It only sees teams named in `CODEOWNERS`. It cannot see a team that exists in
+the organisation but is written down nowhere, and it cannot see a team this
+file documents that was never created. Both happened in Pilot 1: two Secret
+per-intern teams existed undocumented for weeks, and `observers` was
+documented while not existing. Neither produced an error anywhere.
+
+So also compare the organisation against this file:
+
+```bash
+gh api orgs/sycom-academy/teams --jq '.[].slug' | sort > /tmp/actual-teams
+grep -oE '`[a-z0-9-]+`' 00-ADMIN/JOINING.md | tr -d '`' | sort -u > /tmp/named
+comm -23 /tmp/actual-teams /tmp/named    # exists, undocumented — investigate each
+comm -13 /tmp/actual-teams /tmp/named    # documented, missing — create it or stop claiming it
+```
+
+Secret teams appear in that API listing for an owner, which is the point: they
+are invisible on the teams page to members who are not in them, so a listing
+is the only reliable way to see them. Run this whenever a team is added or
+removed, and once before the board session.

@@ -66,6 +66,24 @@ Names and contact details are not recorded here. This repository is public.
 Record the actual allocation before week 1 — who marks which criteria — and
 keep it here. Rubric §7 requires it to be agreed in advance and written down.
 
+### Coordinators
+
+| Role | Count | Notes |
+|---|---|---|
+| Project coordinator | 1 | Joined 9 October, mid week 1 |
+| **Total** | **1** | `@sycom-academy/coordinators` |
+
+Keeps the run on schedule: chases deliverables, follows up with interns and
+mentors, keeps the run sheet current. **Triage** on this repository, so they
+can label, assign and request reviewers but cannot approve or merge. They
+never review, approve, merge or mark. How to add and remove one, and what
+they must not be given, is [`JOINING.md`](JOINING.md) §4a.
+
+A coordinator sees intern details that mentors see and some that mentors do
+not, which is why the data protection contact is told when one joins. No
+access to `SYCOM-INTERNSHIP-ASSESSMENT`, the consent records or the scenario
+key.
+
 ### Observers
 
 Stakeholders and board-session participants: `@sycom-academy/observers`, read

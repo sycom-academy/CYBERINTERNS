@@ -125,6 +125,12 @@ git identity before merging their first PR.
 | **D4 Thu** | | Work |
 | **D5 Fri** | — | **Due: GRC** — Textway breach assessment + supplier register correction |
 
+**Pilot 1 slip.** Inject 05 went out on **D4 in the evening**, not D3 at 14:00.
+The GRC deliverable above moved with it, to **Monday 19 October, 09:00 UK**
+(W3 D1). Recorded here as a programme slip under §10: it is not the cohort's
+and nothing is marked down for it. The in-world Friday deadline inside the
+inject is unchanged, and §1's start-day constraint still holds.
+
 Release inject 04 at **08:40** if you can. It is written to arrive before the
 day has settled, and how a team behaves when something lands before they are
 ready is part of what is assessed.
@@ -141,6 +147,7 @@ The heaviest week for both teams and for you.
 | Day | Time | Event |
 |---|---|---|
 | **D1 Mon** | 07:15 | **Inject 06** — the runbook · SOC |
+| | 09:00 | **Due: GRC** *(Pilot 1 only)* — Textway breach assessment, slipped from W2 D5 |
 | **D2 Tue** | 11:00 | **Inject 07** — non-production data · **both, simultaneously** |
 | **D3 Wed** | — | **Due: SOC** — INC-01 updated |
 | | 16:30 | **Inject 08** — the regulatory clock · GRC |

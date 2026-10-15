@@ -2,6 +2,18 @@
 
 **Release:** Week 2, Day 3, 14:00 · **Team:** GRC · **Deliverable due:** W2 D5
 
+> **Pilot 1 — the marked deadline is Monday 19 October, 09:00 UK.**
+>
+> This inject was released on W2 D4 in the evening instead of W2 D3 at 14:00.
+> The slip is the programme's, not the cohort's, so the submission deadline
+> moved to Monday 19 October 09:00 and nothing is marked down for the delay
+> ([`WEEKLY-SCHEDULE.md`](../00-ADMIN/WEEKLY-SCHEDULE.md) §10).
+>
+> Priya still asks for the assessment "by Friday" in the artefacts below.
+> That is the in-world clock and it has not moved — the exercise is unchanged,
+> and a submission that reasons about her Friday is answering correctly. The
+> date you are **assessed** against is Monday 09:00.
+
 ---
 
 ## Artefact 1 — the notification
@@ -128,6 +140,10 @@ communication.
 ## Time budget
 
 Two days. The Friday deadline is real — the executive committee meets Monday.
+
+**Pilot 1:** because the inject arrived on W2 D4 evening, two days were not
+available. The marked deadline is **Monday 19 October, 09:00 UK**. Plan against
+that, not against D5.
 
 ## Note
 

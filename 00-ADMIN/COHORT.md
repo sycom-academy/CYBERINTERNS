@@ -70,7 +70,7 @@ keep it here. Rubric §7 requires it to be agreed in advance and written down.
 
 | Role | Count | Notes |
 |---|---|---|
-| Project coordinator | 1 | Joined 9 October, mid week 1 |
+| Project coordinator | 1 | Added in week 1 of this run |
 | **Total** | **1** | `@sycom-academy/coordinators` |
 
 Keeps the run on schedule: chases deliverables, follows up with interns and

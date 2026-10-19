@@ -61,19 +61,19 @@ Scope: suppliers that receive, process or have access to customer or employee da
 | FinServe criticality rating | Medium |
 | Risk assessment | Low. Contract, DPA and domestic processing in place. Supplier due diligence performed at procurement. |
 
-### S-04: Textway Communications
+### S-04: Textway Communications Ltd
 
 | Field | Detail |
 | --- | --- |
-| Service | SMS delivery for SCA one-time passcodes and transaction alerts (\~62,000 messages/day) |
+| Service | SMS delivery for SCA one-time passcodes and transaction alerts (~62,000 messages/day) |
 | Data categories | D1 (phone number), D3 (transaction amount in message body) |
-| Processing location | London (primary); routes through a Singapore aggregator |
+| Processing location | London (primary); routes through a downstream partner in Singapore |
 | Cross-border transfer | Yes, Singapore. No adequacy regulations. No IDTA and no UK Addendum in place. Identified in 2025 data mapping; not yet assessed. |
 | Contract | Reseller terms only (standard T&Cs) |
 | DPA | No |
-| Material outsourcing (PRA SS2/21) | No, but arguably should be assessed given SCA dependency. Textway is the sole provider of OTP for payment initiation (IBS-1). No fallback path configured. |
+| Material outsourcing (PRA SS2/21) | No, but it should be assessed. Textway is the sole provider of OTP for payment initiation (IBS-1). No fallback path configured. |
 | FinServe criticality rating | Low |
-| Risk assessment | Critical. No DPA despite processing D1 and D3 data. No transfer mechanism for the Singapore routing. Onboarded by marketing for campaigns in 2022 and extended to transactional OTP without re-assessment. FinServe rates it Low; the architecture shows it is a single point of failure for IBS-1 (making payments, 4-hour tolerance). A Textway outage stops new payment initiation. |
+| Risk assessment | Critical. No DPA, no transfer mechanism, a confirmed breach affecting FinServe customer data (notified 14 October 2026; see Textway-Breach-Assessment.md), and no fallback for IBS-1 (4-hour tolerance). A Textway outage stops new payment initiation. |
 
 ### S-05: Meridian Trust (partner bank)
 

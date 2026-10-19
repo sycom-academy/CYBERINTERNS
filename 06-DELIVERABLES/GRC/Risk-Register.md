@@ -317,6 +317,20 @@ Because branch LANs are flat with no VLAN segmentation below site level, and bec
 | FinServe score | Not on the register |
 | Recommended treatment | Deploy VLAN segmentation at each branch. Forward branch firewall logs to Sentinel. Review branch physical access controls. Reassess alongside the standing board review of branch viability (board worry item 4). |
 
+### RS-19: No reassessment of suppliers when their scope changes
+
+Because FinServe has no process to reassess supplier criticality, contractual terms or data protection controls when the scope of an existing supplier engagement changes, there is a risk that suppliers originally onboarded for low-risk purposes are extended to critical functions without DPAs, without due diligence and without operational resilience mapping, resulting in uncontrolled processing of customer data and, as demonstrated by the Textway breach, exposure of that data without adequate contractual remedies.
+
+| Field | Value |
+| --- | --- |
+| Assets | External: all suppliers whose scope has changed since onboarding |
+| Data | Varies by supplier |
+| Inherent | L5 x I4 = 20 |
+| Controls evidenced | None. The supplier register has no mechanism for scope-change review. The overdue outsourcing policy does not address it. |
+| Residual | L5 x I4 = 20 (Critical) |
+| Owner | COO |
+| FinServe score | Not on the register |
+| Recommended treatment | Implement a supplier scope-change trigger in the procurement process: any change to the data categories a supplier receives, or the business service it supports, requires reassessment of criticality, DPA status and due diligence. Review all current suppliers for scope changes since onboarding. Update P-06 to include this control. |
 ## Comparison with FinServe's existing risk register
 
 FinServe's register has 18 open risks. This register has 18 risks built from the architecture. The overlap is small, and the gaps tell the story.
@@ -355,5 +369,6 @@ The following are on our register and have no equivalent on FinServe's:
 - RS-16: No 2025 IT audit
   - RS-17: Expiring service principal secret on legacy pipelines
   - RS-18: Branch sites as unmonitored network entry points
+RS-19: Contractual Terms and DPA
 
-Sixteen of eighteen risks on this register have no entry on FinServe's. The register has no entry relating to third-party data processing, to non-production environments, to privileged access, to detection capability, or to data protection compliance. Two open audit findings (IA-2024-07, IA-2024-11) have management responses but no corresponding risk register entries, meaning the risks they describe are not being tracked, scored or reported to the Risk Committee.
+Sixteen of nineteen risks on this register have no entry on FinServe's. The register has no entry relating to third-party data processing, to non-production environments, to privileged access, to detection capability, or to data protection compliance. Two open audit findings (IA-2024-07, IA-2024-11) have management responses but no corresponding risk register entries, meaning the risks they describe are not being tracked, scored or reported to the Risk Committee.

@@ -24,8 +24,11 @@ point it at this file.
 | Track | Interns | Team |
 |---|---|---|
 | GRC | 4 | `@sycom-academy/interns-grc` |
-| SOC | 4 | `@sycom-academy/interns-soc` |
-| **Total** | **8** | |
+| SOC | 3 (4 started) | `@sycom-academy/interns-soc` |
+| **Total** | **7 (8 started)** | |
+
+One SOC intern withdrew in week 3. The sizing notes below were written for
+eight and are left as they were.
 
 Eight puts this run at the top of the 5–8 band of the sizing guidance below.
 One more intern moves it into the 9–12 band, where the answer is two cohorts,
